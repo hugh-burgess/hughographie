@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Bogle Regular';
+  src: local('BBHBogle-Regular'), url(/public/fonts/BBHBogle-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Helvetica Light';
+  src: local('Helvetica Light'), url(/public/fonts/helvetica-light.ttf) format('truetype');
+}

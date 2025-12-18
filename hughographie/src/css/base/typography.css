@@ -1,0 +1,29 @@
+:root {
+    --font-primary: 'Bogle Regular', sans-serif;
+    --font-secondary: 'Helvetica Light', sans-serif;
+}
+
+h1 {
+    font-size: var(--heading-full);
+    margin: 0;
+    letter-spacing: -5px;
+}
+
+h2 {
+    font-size: var(--font-size-l);
+}
+
+h3 {
+    font-size: var(--font-size-m);
+}
+
+a,
+h1,
+h2,
+h3 {
+    font-family: var(--font-primary)
+}
+
+p {
+    font-family: var(--font-secondary);
+}
