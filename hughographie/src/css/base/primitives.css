@@ -1,22 +1,69 @@
+.root {
+    display: grid;
+  grid-template-rows: auto 1fr 80px;
+  height: 100%;
+  min-height: 100vh;
+}
+
 header {
   background: var(--white);
   color: var(--black);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 1vw;
-  padding-right: 1vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: var(--spacing-m) 1vw;
+  gap: var(--spacing-s);
 
   a {
     letter-spacing: .05em;
     font-size: var(--font-size-m);
     font-weight: 400;
-    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--black);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-m);
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      display: inline;
+
+      .active {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
 body {
   background: var(--black);
   color: var(--white);
+  height: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-m) 1vw;
+
+  a {
+    font-size: var(--font-size-s);
+    color: var(--white);
+    text-decoration: none;
+  }
 }
 
 .App {
