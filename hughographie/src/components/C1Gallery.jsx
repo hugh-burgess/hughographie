@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import processedImageUrl from '../utils/imageOptimization';
 
 export default function C1Gallery({ fields = {} }) {
     const itemsRef = useRef([]);
@@ -31,18 +32,23 @@ export default function C1Gallery({ fields = {} }) {
         <div>
             {fields.title && <h2>{fields.title}</h2>}
             <div className="gallery-grid">
-                {fields.images && fields.images.map((image, index) => (
-                    <div
-                        key={image._uid}
-                        className="gallery-item"
-                        ref={(el) => (itemsRef.current[index] = el)}
-                    >
-                        <img
-                            src={image.filename}
-                            alt={image.alt || `Gallery image ${index + 1}`}
-                        />
-                    </div>
-                ))}
+                {fields.images && fields.images.map((image, index) => {
+                    const imageProps = processedImageUrl(image.filename);
+                    
+                    return (
+                        <div
+                            key={image._uid}
+                            className="gallery-item"
+                            ref={(el) => (itemsRef.current[index] = el)}
+                        >
+                            <img
+                                {...imageProps}
+                                alt={image.alt || `Gallery image ${index + 1}`}
+                                loading="lazy"
+                            />
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );

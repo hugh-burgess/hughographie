@@ -1,5 +1,4 @@
 export default function Footer({ blok }) {
-console.log('Footer blok:', blok);
     if (!blok || Object.keys(blok).length === 0) {
         return <footer><p>Footer (No data)</p></footer>;
     }
