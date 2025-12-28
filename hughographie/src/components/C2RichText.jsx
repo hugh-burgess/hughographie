@@ -8,9 +8,11 @@ const C2RichText = ({ content, className }) => {
 
         return contentArray.map((item, index) => {
             const key = `${parentKey}-${index}`;
-
             switch (item.type) {
                 case 'paragraph':
+                    if (!item.content) {
+                        return <br key={key} />;
+                    }
                     return (
                         <p key={key}>
                             {item.content ? renderContent(item.content, key) : null}
