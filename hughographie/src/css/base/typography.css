@@ -7,6 +7,8 @@ p {
     font-family: var(--font-primary);
     font-size: var(--font-size-body);
     line-height: 1.6;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 h1 {
@@ -50,6 +52,10 @@ small,
     color: var(--color-text-secondary, rgba(0, 0, 0, 0.7));
 }
 
+a.inverse.active {
+    border-bottom: 2px solid var(--white);
+}
+
 @media (min-width: 768px) {
     p {
         font-size: var(--font-size-body);
@@ -77,29 +83,28 @@ small,
         font-size: var(--font-size-caption);
     }
 
-     a {
-        &:not(.logo):after {
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            content: '';
-            height: 1px;
-            width: 0;
-            transition: width 0.2s ease;
-            border-bottom: 2px solid var(--black);
-        }
-
-        &.inverse.active,
-        &.inverse:after {
-            border-bottom: 2px solid var(--white);
-        }
+    a:not(.logo):not(.active)::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        height: 2px;
+        width: 0;
+        transition: width 0.2s ease-in-out;
+        border-bottom: 2px solid var(--black);
     }
 
     a:hover {
         opacity: 0.7;
+    }
 
-        &:not(.active):after {
-            width: 100%;
-        }
+    a:not(.active):hover::after {
+        width: 100%;
+    }
+
+    a.inverse:hover::after {
+        width: 100%;
+        bottom: -2px;
+        border-bottom: 2px solid var(--white);
     }
 }

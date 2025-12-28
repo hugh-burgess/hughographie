@@ -1,7 +1,7 @@
-const C2RichText = ({ fields }) => {
-    if (!fields?.content) return null;
+const C2RichText = ({ content, className }) => {
+    if (!content) return null;
 
-    const richtext = Array.isArray(fields.content) ? fields.content : fields.content.content;
+    const richtext = Array.isArray(content) ? content : content.content;
 
     function renderContent(contentArray, parentKey) {
         if (!contentArray) return null;
@@ -68,7 +68,7 @@ const C2RichText = ({ fields }) => {
         });
     }
 
-    return <div>{renderContent(richtext, 'rt')}</div>;
+    return <div className={className || ''}>{renderContent(richtext, 'rt')}</div>;
 };
 
 export default C2RichText;
