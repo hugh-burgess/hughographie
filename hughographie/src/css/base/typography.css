@@ -1,29 +1,105 @@
 :root {
-    --font-primary: 'Bogle Regular', sans-serif;
-    --font-secondary: 'Helvetica Light', sans-serif;
-}
-
-h1 {
-    font-size: var(--heading-full);
-    margin: 0;
-    letter-spacing: -5px;
-}
-
-h2 {
-    font-size: var(--font-size-l);
-}
-
-h3 {
-    font-size: var(--font-size-m);
-}
-
-a,
-h1,
-h2,
-h3 {
-    font-family: var(--font-primary)
+    --font-primary: 'Helvetica Light', sans-serif;
+    --font-secondary: 'Asap', sans-serif;
 }
 
 p {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-body);
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: var(--font-size-heading-1);
     font-family: var(--font-secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h2 {
+    font-size: var(--font-size-heading-2);
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: var(--font-size-heading-3);
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+a {
+    position: relative;
+    font-size: var(--font-size-body);
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+small,
+.caption,
+.secondary-text {
+    font-size: var(--font-size-caption);
+    color: var(--color-text-secondary, rgba(0, 0, 0, 0.7));
+}
+
+@media (min-width: 768px) {
+    p {
+        font-size: var(--font-size-body);
+    }
+
+    h1 {
+        font-size: var(--font-size-heading-1);
+    }
+
+    h2 {
+        font-size: var(--font-size-heading-2);
+    }
+
+    h3 {
+        font-size: var(--font-size-heading-3);
+    }
+
+    a {
+        font-size: var(--font-size-body);
+    }
+
+    small,
+    .caption,
+    .secondary-text {
+        font-size: var(--font-size-caption);
+    }
+
+     a {
+        &:not(.logo):after {
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            content: '';
+            height: 1px;
+            width: 0;
+            transition: width 0.2s ease;
+            border-bottom: 2px solid var(--black);
+        }
+
+        &.inverse.active,
+        &.inverse:after {
+            border-bottom: 2px solid var(--white);
+        }
+    }
+
+    a:hover {
+        opacity: 0.7;
+
+        &:not(.active):after {
+            width: 100%;
+        }
+    }
 }

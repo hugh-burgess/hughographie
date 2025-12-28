@@ -21,14 +21,14 @@ export default function Layout({ children }) {
 
     return (
         <>
-            {globals.map((global) => {
-                return global.content.component === 'Header' && <StoryblokComponent blok={global.content} />
+            {globals.map((global, index) => {
+                return global.content.component === 'Header' && <StoryblokComponent blok={global.content} key={index} />
             })}
             <main>
                 {children}
             </main>
-            {globals.map((global) => {
-                return global.content.component === 'Footer' && <StoryblokComponent blok={global.content} />
+            {globals.map((global, index) => {
+                return global.content.component === 'Footer' && <StoryblokComponent blok={global.content} key={index}/>
             })}
         </>
     );

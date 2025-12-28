@@ -17,12 +17,13 @@ export default function C1Gallery({ fields = {} }) {
             rootMargin: '50px'
         });
 
-        itemsRef.current.forEach((item) => {
+        const items = itemsRef.current;
+        items.forEach((item) => {
             if (item) observer.observe(item);
         });
 
         return () => {
-            itemsRef.current.forEach((item) => {
+            items.forEach((item) => {
                 if (item) observer.unobserve(item);
             });
         };

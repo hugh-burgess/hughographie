@@ -1,6 +1,7 @@
 @font-face {
-  font-family: 'Bogle Regular';
-  src: local('BBHBogle-Regular'), url(/public/fonts/BBHBogle-Regular.ttf) format('truetype');
+  font-family: 'Asap';
+  src: local('Asap'), url(/public/fonts/asap.ttf) format('truetype');
+  font-weight: 100;
 }
 @font-face {
   font-family: 'Helvetica Light';
