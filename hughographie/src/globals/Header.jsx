@@ -6,13 +6,13 @@ export default function Header({ blok }) {
     }
 
     return (
-        <header>
+        <header className='light'>
             <Link to="/" className="logo">{blok.title || 'Logo'}</Link>
             <ul>
                 {blok.nav?.map((item) => (
                     item.title && (<li key={item._uid}>
-                        <NavLink to={item.link?.cached_url || '#'} 
-                            className={({ isActive}) => isActive ? "active" : ""}>
+                        <NavLink to={item.link?.cached_url || '#'}
+                            className={({ isActive }) => isActive ? "active" : ""}>
                             {item.title}</NavLink>
                     </li>)
                 ))}

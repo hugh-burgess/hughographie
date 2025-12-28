@@ -11,7 +11,8 @@
     .text {
         grid-column: 1;
         grid-row: 2;
-        padding: var(--spacing-m);
+        width: 80%;
+        margin: 0 auto;
     }
 
     &.reverse {
@@ -23,8 +24,8 @@
         .text {
             grid-column: 1;
             grid-row: 1;
-            padding: var(--spacing-m);
-
+            width: 80%;
+            margin: 0 auto;
         }
     }
 
@@ -42,7 +43,12 @@
         .text {
             grid-column: 2;
             grid-row: 1;
-            padding: var(--spacing-m);
+            padding: 0 var(--spacing-m) var(--spacing-m);
+            width: auto;
+
+            p {
+                margin: 0;
+            }
         }
 
         &.reverse {
@@ -56,8 +62,12 @@
             .text {
                 grid-column: 1;
                 grid-row: 1;
-                padding: var(--spacing-m);
+                padding: 0 var(--spacing-m) var(--spacing-m);
+                width: auto;
 
+                p {
+                    margin: 0;
+                }
             }
         }
     }
