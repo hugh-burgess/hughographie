@@ -17,7 +17,8 @@ h1 {
     text-transform: uppercase;
     font-weight: 700;
     line-height: 1.2;
-    margin: 0;
+    margin: 0 auto var(--spacing-l);
+    width: 80%;
 }
 
 h2 {
@@ -63,6 +64,7 @@ a.inverse.active {
 
     h1 {
         font-size: var(--font-size-heading-1);
+        width: auto;
     }
 
     h2 {

@@ -9,6 +9,9 @@ import './css';
 import Page from './storyblok/Page';
 import Header from './globals/Header';
 import Footer from './globals/Footer';
+import C1Gallery from './components/C1Gallery';
+import C2RichText from './components/C2RichText';
+import C3ImageAndText from './components/C3ImageAndText';
 
 storyblokInit({
   accessToken: process.env.REACT_APP_STORYBLOK_DELIVERY_API_TOKEN,
@@ -17,6 +20,9 @@ storyblokInit({
     page: Page,
     Header: Header,
     Footer: Footer,
+    Gallery: C1Gallery,
+    RichText: C2RichText,
+    'Image and RichText': C3ImageAndText,
   },
   apiOptions: {
     region: 'eu',

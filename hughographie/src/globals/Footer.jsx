@@ -2,8 +2,50 @@ import { NavLink } from 'react-router-dom';
 import { FaGithub } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
+import { useEffect, useState } from 'react';
 
 export default function Footer({ blok }) {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const metaLinkLogos = [<FaGithub />, <IoMdMail />, <RiInstagramFill />];
+    const checkForEmailInLink = (link) => {
+        switch (link.linktype) {
+            case 'email':
+                return `mailto:${link.cached_url || link.url}`;
+            default:
+                return link.cached_url || link.url;
+        }
+    };
+
+    const processMetaLinks = (meta, index) => {
+        const title = isMobile ? meta.title : metaLinkLogos[index]
+        const linkBasics = { className: "inverse", key: index }
+        if (meta.link.linktype === 'story') {
+            return <NavLink
+                {...linkBasics}
+                to={meta.link?.cached_url || '#'}>
+                {title}
+            </NavLink>
+        } else
+            return <a
+                {...linkBasics}
+                href={checkForEmailInLink(meta.link)}
+                target="_blank"
+                rel="noreferrer">
+                {title}
+            </a>
+    }
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     if (!blok || Object.keys(blok).length === 0) {
         return <footer><p>Footer (No data)</p></footer>;
     }
@@ -11,9 +53,7 @@ export default function Footer({ blok }) {
     return (
         <footer className='dark'>
             <div className='meta-links'>
-                <a className="inverse" href="https://www.github.com/hugh-burgess" target="_blank" rel="noreferrer"><FaGithub /></a>
-                <a className="inverse" href="mailto:hughographie@hotmail.com" target="_blank" rel="noreferrer"><IoMdMail /></a>
-                <a className="inverse" href="https://www.instagram.com/hughographie" target="_blank" rel="noreferrer"><RiInstagramFill /></a>
+                {blok.metaLinks && blok.metaLinks.map((meta, index) => processMetaLinks(meta, index))}
             </div>
             <div>{blok.nav?.map((navItem, index) =>
                 <NavLink
