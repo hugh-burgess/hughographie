@@ -30,7 +30,7 @@ export default function C1Gallery({ fields = {} }) {
     }, [fields.images]);
 
     return (
-        <div>
+        <section className="gallery-component">
             {fields.title && <h2>{fields.title}</h2>}
             <div className="gallery-grid">
                 {fields.images && fields.images.map((image, index) => {
@@ -51,6 +51,6 @@ export default function C1Gallery({ fields = {} }) {
                     );
                 })}
             </div>
-        </div>
+        </section>
     );
 }

@@ -71,6 +71,10 @@ body {
   margin: 0;
 }
 
+main {
+  width: 100vw;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -102,12 +106,11 @@ footer {
 }
 
 header,
-main,
 footer {
-  padding: var(--spacing-s);
+  padding: var(--mobile-container-width-x);
 
   @media (min-width: 768px) {
-    padding: var(--spacing-m);
+    padding: var(--desktop-container-width-x)
   }
 }
 

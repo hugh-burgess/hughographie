@@ -4,4 +4,7 @@
     --spacing-m: 20px;
     --spacing-l: 40px;
     --spacing-xl: 80px;
+
+    --mobile-container-width-x: 10px;
+    --desktop-container-width-x: 20px;
 }

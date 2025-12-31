@@ -7,11 +7,8 @@ export default function Page({ blok }) {
   }
 
   return (
-    <>
-      {blok.headline && <h1>{blok.headline}</h1>}
-      {blok.modules?.map((nestedBlok, index) => (
-        <PageModulesRenderer contentType={nestedBlok.component} key={index} fields={nestedBlok} />
-      ))}
-    </>
+    blok.modules?.map((nestedBlok, index) => (
+      <PageModulesRenderer contentType={nestedBlok.component} key={index} fields={nestedBlok} />
+    ))
   );
 }

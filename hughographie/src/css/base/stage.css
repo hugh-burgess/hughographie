@@ -1,0 +1,67 @@
+.stage {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 130px);
+    max-height: 100vh;
+
+    @media (min-width: 769px) {
+        height: calc(100vh - 80px);
+    }
+
+    h1 {
+        position: absolute;
+        opacity: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: auto;
+        top: 50%;
+        animation: fade-in 1s ease-in-out forwards;
+        animation-delay: 0.5s;
+        color: var(--white);
+        font-size: var(--font-size-stage);
+    }
+
+    .scroll-button {
+        position: absolute;
+        bottom: var(--spacing-xs);
+        right: var(--spacing-xs);
+        transform: translateX(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: var(--font-size-l);
+        color: var(--white);
+        animation: floating 2s ease-in-out infinite;
+        
+        @media (min-width: 768px) {
+            font-size: var(--font-size-xl);
+            bottom: var(--spacing-s);
+            right: var(--spacing-s);
+        }
+    }
+
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-40px);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(0%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}

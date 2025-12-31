@@ -1,6 +1,8 @@
 .image-and-text-grid {
     display: grid;
     margin: var(--spacing-l) auto;
+    padding: 0 var(--mobile-container-width-x);
+    gap: var(--mobile-container-width-x);
 
     .image {
         grid-column: 1;
@@ -32,18 +34,19 @@
     @media (min-width: 769px) {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
+        padding: 0 var(--desktop-container-width-x);
+        gap: var(--desktop-container-width-x);
 
         .image {
             grid-column: 1;
             grid-row: 1;
             max-width: 500px;
-            justify-self: center;
+            justify-self: self;
         }
 
         .text {
             grid-column: 2;
             grid-row: 1;
-            padding: 0 var(--spacing-m) var(--spacing-m);
             width: auto;
 
             p {
@@ -56,13 +59,12 @@
                 grid-column: 2;
                 grid-row: 1;
                 max-width: 500px;
-                justify-self: center;
+                justify-self: end;
             }
 
             .text {
                 grid-column: 1;
                 grid-row: 1;
-                padding: 0 var(--spacing-m) var(--spacing-m);
                 width: auto;
 
                 p {
@@ -79,10 +81,14 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 16px;
     margin: var(--spacing-l) auto;
-
+    padding: 0 var(--mobile-container-width-x);
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+        padding: var(--desktop-container-width-x);
     }
 
     @media (min-width: 1500px) {

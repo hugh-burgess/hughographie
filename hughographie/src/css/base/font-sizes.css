@@ -1,4 +1,5 @@
 :root {
+    --font-size-stage: 50px;
     --font-size-page-title: 28px;
     --font-size-heading-1: 28px;
     --font-size-heading-2: 24px;
@@ -20,6 +21,7 @@
 
 @media (min-width: 768px) {
     :root {
+        --font-size-stage: 120px;
         --font-size-page-title: 40px;
         --font-size-heading-1: 40px;
         --font-size-heading-2: 32px;
