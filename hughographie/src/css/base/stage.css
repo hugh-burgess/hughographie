@@ -3,6 +3,7 @@
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
+    z-index: 1;
 
     h1 {
         position: absolute;

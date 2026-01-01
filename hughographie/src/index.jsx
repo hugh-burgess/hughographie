@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { StrictMode } from 'react';
+import { StrictMode, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
 import App from "./App"
@@ -9,6 +9,8 @@ import './css';
 import Page from './storyblok/Page';
 import Header from './globals/Header';
 import Footer from './globals/Footer';
+
+import { DarkModeProvider } from './context/DarkModeContext';
 
 storyblokInit({
   accessToken: process.env.REACT_APP_STORYBLOK_DELIVERY_API_TOKEN,
@@ -28,12 +30,14 @@ const root = document.getElementById('root');
 createRoot(root).render(
   <StrictMode>
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/:slug" element={<App />} />
-        </Routes>
-      </Layout>
+      <DarkModeProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/:slug" element={<App />} />
+          </Routes>
+        </Layout>
+      </DarkModeProvider>
     </BrowserRouter>
   </StrictMode>
 );

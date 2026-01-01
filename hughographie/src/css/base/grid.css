@@ -73,11 +73,6 @@
             }
         }
     }
-
-    @media (min-width: 1200px) {
-        padding: 0;
-    }
-
 }
 
 .gallery-grid {
@@ -96,10 +91,6 @@
 
     @media (min-width: 1500px) {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media (min-width: 1200px) {
-        padding: 0;
     }
 }
 

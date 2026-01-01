@@ -48,7 +48,22 @@ header {
 
     @media (min-width: 769px) {
       flex-direction: row;
-      align-items: auto;
+    }
+
+    .darkmode-toggle {
+      position: absolute;
+      font-size: 25px;
+      cursor: pointer;
+      top: var(--spacing-s);
+      right: var(--spacing-s);
+      
+      @media (min-width: 768px) {
+        font-size: 15px;
+        height: 15px;
+        position: relative;
+        top: unset;
+        right: unset;
+      }
     }
 
     li {
@@ -76,6 +91,7 @@ body {
 main {
   margin: 0 auto;
   width: 100%;
+  transition: all 0.5s ease-in-out;
 }
 
 footer {
@@ -114,6 +130,7 @@ footer {
 
 header,
 footer {
+  transition: all 0.5s ease-in-out;
   padding: var(--mobile-container-width-x);
 
   @media (min-width: 768px) {
@@ -121,16 +138,9 @@ footer {
   }
 }
 
-.root,
-header,
-main,
-footer,
-.rich-text {
-  max-width: var(--desktop-container-max-width);
-}
-
 .rich-text {
   padding: 0 var(--mobile-container-width-x);
+
   @media (min-width: 768px) {
     padding: 0 var(--desktop-container-width-x);
   }

@@ -4,7 +4,7 @@ import { IoMdMail } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
 import { useEffect, useState } from 'react';
 
-export default function Footer({ blok }) {
+export default function Footer({ blok, theme }) {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const metaLinkLogos = [<FaGithub />, <IoMdMail />, <RiInstagramFill />];
     const checkForEmailInLink = (link) => {
@@ -50,7 +50,7 @@ export default function Footer({ blok }) {
     }
 
     return (
-        <footer className='light'>
+        <footer className={theme}>
             <div className='meta-links'>
                 {blok.metaLinks && blok.metaLinks.map((meta, index) => processMetaLinks(meta, index))}
             </div>
