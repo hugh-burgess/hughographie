@@ -5,7 +5,7 @@
     aspect-ratio: 16/9;
 
     @media (min-width: 768px) {
-     margin-top: -80px;
+        margin-top: -80px;
     }
 
     h1 {
@@ -22,21 +22,20 @@
     }
 
     .scroll-button {
-        position: absolute;
-        bottom: var(--spacing-xs);
-        right: var(--spacing-xs);
-        transform: translateX(-50%);
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: var(--font-size-l);
-        color: var(--white);
-        animation: floating 2s ease-in-out infinite;
-        
+        display: none;
+
         @media (min-width: 768px) {
-            font-size: var(--font-size-xl);
+            display: block;
+            position: absolute;
+            transform: translateX(-50%);
+            font-size: var(--font-size-l);
             bottom: var(--spacing-s);
             right: var(--spacing-s);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--white);
+            animation: floating 2s ease-in-out infinite;
         }
     }
 

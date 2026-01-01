@@ -18,16 +18,17 @@ export default function Footer({ blok }) {
 
     const processMetaLinks = (meta, index) => {
         const title = isMobile ? meta.title : metaLinkLogos[index]
-        const linkBasics = { className: "inverse", key: index }
         if (meta.link.linktype === 'story') {
             return <NavLink
-                {...linkBasics}
+                className="inverse"
+                key={index}
                 to={meta.link?.cached_url || '#'}>
                 {title}
             </NavLink>
         } else
             return <a
-                {...linkBasics}
+                className="inverse"
+                key={index}
                 href={checkForEmailInLink(meta.link)}
                 target="_blank"
                 rel="noreferrer">
