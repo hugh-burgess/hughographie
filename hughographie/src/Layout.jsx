@@ -8,8 +8,8 @@ export default function Layout({ children }) {
 
     useEffect(() => {
         const fetchGlobals = async () => {
-            const data = await getGlobals();
-            setGlobals(data);
+            const { header, footer } = await getGlobals();
+            setGlobals({ header, footer });
             setLoading(false);
         };
         fetchGlobals();
@@ -21,15 +21,11 @@ export default function Layout({ children }) {
 
     return (
         <>
-            {globals.map((global, index) => {
-                return global.content.component === 'Header' && <StoryblokComponent blok={global.content} key={index} />
-            })}
+            {globals && globals.header?.content && <StoryblokComponent blok={globals.header.content} key={0} />}
             <main>
                 {children}
             </main>
-            {globals.map((global, index) => {
-                return global.content.component === 'Footer' && <StoryblokComponent blok={global.content} key={index}/>
-            })}
+            {globals && globals.footer?.content && <StoryblokComponent blok={globals.footer.content} key={1} />}
         </>
     );
 }

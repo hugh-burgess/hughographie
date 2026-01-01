@@ -20,14 +20,12 @@ export default function Footer({ blok }) {
         const title = isMobile ? meta.title : metaLinkLogos[index]
         if (meta.link.linktype === 'story') {
             return <NavLink
-                className="inverse"
                 key={index}
                 to={meta.link?.cached_url || '#'}>
                 {title}
             </NavLink>
         } else
             return <a
-                className="inverse"
                 key={index}
                 href={checkForEmailInLink(meta.link)}
                 target="_blank"
@@ -52,13 +50,13 @@ export default function Footer({ blok }) {
     }
 
     return (
-        <footer className='dark'>
+        <footer className='light'>
             <div className='meta-links'>
                 {blok.metaLinks && blok.metaLinks.map((meta, index) => processMetaLinks(meta, index))}
             </div>
             <div>{blok.nav?.map((navItem, index) =>
                 <NavLink
-                    className={({ isActive }) => isActive ? "inverse active" : "inverse"}
+                    className={({ isActive }) => isActive ? "active" : ""}
                     key={index} to={navItem.link?.cached_url || '#'}>
                     {navItem.title}
                 </NavLink>

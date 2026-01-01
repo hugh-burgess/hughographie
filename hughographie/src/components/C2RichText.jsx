@@ -70,7 +70,7 @@ const C2RichText = ({ content, className }) => {
         });
     }
 
-    return <div className={className || ''}>{renderContent(richtext, 'rt')}</div>;
+    return <div className={`${className || ""} rich-text`}>{renderContent(richtext, 'rt')}</div>;
 };
 
 export default C2RichText;
