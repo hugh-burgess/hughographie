@@ -4,10 +4,6 @@
     height: auto;
     aspect-ratio: 16/9;
 
-    @media (min-width: 768px) {
-        margin-top: -80px;
-    }
-
     h1 {
         position: absolute;
         opacity: 0;
