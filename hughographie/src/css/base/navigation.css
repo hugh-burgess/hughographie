@@ -61,10 +61,8 @@
     flex-direction: column;
     justify-content: space-between;
 
-    .meta-links {
+    & .meta-links {
         display: flex;
-        flex-direction: row;
-        width: 100%;
         gap: var(--spacing-m);
         align-items: center;
         justify-content: center;
