@@ -87,6 +87,10 @@ header {
 body {
   height: 100%;
   margin: 0;
+
+  &.dark {
+    background: var(--black);
+  }
 }
 
 main {
@@ -126,18 +130,39 @@ footer {
   }
 }
 
-header,
-footer {
-  transition: all 0.5s ease-in-out;
-  padding: var(--mobile-container-width-x);
-}
-
 .rich-text {
   padding: 0 var(--mobile-container-width-x);
 
   @media (min-width: 769px) {
     padding: 0 var(--desktop-container-width-x);
   }
+
+  @media (min-width: 1200px) {
+    padding: 0;
+  }
+}
+
+header,
+main,
+footer,
+.rich-text {
+  max-width: var(--desktop-container-max-width);
+}
+
+header,
+footer {
+  padding: var(--mobile-container-width-x);
+  transition: all 0.5s ease-in-out;
+  
+  @media (min-width: 769px) {
+    padding: var(--desktop-container-width-x);
+  }
+
+  @media (min-width: 1201px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+
 }
 
 .App {

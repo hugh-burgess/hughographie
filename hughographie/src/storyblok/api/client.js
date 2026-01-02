@@ -22,3 +22,22 @@ export async function getGlobals() {
         return null;
     }
 }
+
+export async function getBlogs() {
+    const storyblokApi = getStoryblokApi();
+
+    try {
+        const response = await storyblokApi.get('cdn/stories/', {
+            version: 'draft',
+            starts_with: 'blog',
+            excluding_ids: 129835727366736 // Blog Index ID
+        });
+
+        return {
+            blogs: response.data.stories,
+        };
+    } catch (error) {
+        console.error('Error fetching globals:', error);
+        return null;
+    }
+}

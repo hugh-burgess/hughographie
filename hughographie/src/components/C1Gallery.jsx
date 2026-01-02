@@ -32,14 +32,14 @@ export default function C1Gallery({ fields = {} }) {
     return (
         <section>
             {fields.title && <h2>{fields.title}</h2>}
-            <div className="gallery-grid">
+            <div className="grid">
                 {fields.images && fields.images.map((image, index) => {
                     const imageProps = processedImageUrl(image.filename);
                     
                     return (
                         <div
                             key={image._uid}
-                            className="gallery-item"
+                            className="grid-item"
                             ref={(el) => (itemsRef.current[index] = el)}
                         >
                             <img

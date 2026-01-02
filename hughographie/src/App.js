@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 export default function App() {
   const location = useLocation();
-  const slug = location.pathname.substring(1) || 'home';
-  
+
+  const slug = location.pathname.replace(/^\/|\/$/g, '') || 'home';
 	const story = useStoryblok(slug === '' ? 'home' : slug, {
 		version: 'draft',
 	});

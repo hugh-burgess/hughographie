@@ -45,6 +45,11 @@ a {
     text-transform: uppercase;
     text-decoration: none;
     transition: opacity 0.2s ease;
+
+    &.blog-back {
+        font-size: var(--font-size-xl);
+        padding-left: calc(var(--mobile-container-width-x) - 5px);
+    }
 }
 
 small,
@@ -79,6 +84,10 @@ a.inverse.active {
 
     a {
         font-size: var(--font-size-body);
+
+        &.blog-back {
+            padding-left: calc(var(--desktop-container-width-x) - 10px);
+        }
     }
 
     small,
@@ -87,7 +96,7 @@ a.inverse.active {
         font-size: var(--font-size-caption);
     }
 
-    a:not(.logo):not(.active)::after {
+    a:not(.teaser-card):not(.blog-back):not(.logo):not(.active)::after {
         position: absolute;
         bottom: 0;
         left: 0;

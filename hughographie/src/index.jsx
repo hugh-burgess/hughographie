@@ -33,8 +33,7 @@ createRoot(root).render(
       <DarkModeProvider>
         <Layout>
           <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/:slug" element={<App />} />
+            <Route path="*" element={<App />} />
           </Routes>
         </Layout>
       </DarkModeProvider>

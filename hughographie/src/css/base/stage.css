@@ -4,6 +4,7 @@
     height: auto;
     aspect-ratio: 2/1;
     z-index: 1;
+    margin-bottom: var(--spacing-m);
 
     h1 {
         position: absolute;
@@ -31,9 +32,16 @@
             background: none;
             border: none;
             cursor: pointer;
-            color: var(--white);
             animation: floating 2s ease-in-out infinite;
+            
+            svg {
+                fill: var(--white);
+            }
         }
+    }
+
+    @media (min-width: 769px) {
+        margin-bottom: 0;
     }
 
 }

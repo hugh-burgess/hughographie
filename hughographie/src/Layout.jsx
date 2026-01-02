@@ -9,6 +9,9 @@ export default function Layout({ children }) {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     const { isDarkMode } = useDarkMode()
+
+    const theme = isDarkMode ? 'dark' : 'light'
+
     useEffect(() => {
         const fetchGlobals = async () => {
             const { header, footer } = await getGlobals();
@@ -29,11 +32,17 @@ export default function Layout({ children }) {
         };
     }, []);
 
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.body.classList.add('dark')
+        } else {
+            document.body.classList.remove('dark')
+        }
+    }, [theme])
+
     if (loading) {
         return children;
     }
-
-    const theme = isDarkMode ? 'dark' : 'light'
 
     const mobileFooterNavItems = {metaLinks: globals.footer.content.metaLinks, nav: globals.footer.content.nav}
 
