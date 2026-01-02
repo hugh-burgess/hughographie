@@ -130,10 +130,6 @@ header,
 footer {
   transition: all 0.5s ease-in-out;
   padding: var(--mobile-container-width-x);
-
-  @media (min-width: 769px) {
-    padding: var(--desktop-container-width-x)
-  }
 }
 
 .rich-text {
