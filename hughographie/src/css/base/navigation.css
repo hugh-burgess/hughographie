@@ -60,18 +60,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    & .meta-links {
-        display: flex;
-        gap: var(--spacing-m);
-        align-items: center;
-        justify-content: center;
-
-        a {
-            padding: 1rem;
-            width: fit-content;
-        }
-    }
 }
 
 .nav-menu.open {
@@ -158,5 +146,18 @@
     .nav-menu a.active {
         background-color: transparent;
         border-bottom: 2px solid currentColor;
+    }
+
+
+    .meta-links {
+        display: flex;
+        gap: var(--spacing-m);
+        align-items: center;
+        justify-content: center;
+
+        a {
+            padding: 1rem;
+            width: fit-content;
+        }
     }
 }
