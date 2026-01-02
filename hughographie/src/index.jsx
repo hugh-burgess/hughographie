@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { StrictMode, useEffect } from 'react';
+import { StrictMode } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
 import App from "./App"

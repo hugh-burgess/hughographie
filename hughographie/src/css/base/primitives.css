@@ -1,11 +1,15 @@
 .root {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 65px auto;
   height: 100%;
   position: relative;
   margin: 0 auto;
   min-height: 100vh;
   width: 100%;
+
+  @media (min-width: 769px) {
+    grid-template-rows: auto 1fr auto;
+  }
 }
 
 .dark {
@@ -25,11 +29,16 @@
 }
 
 header {
+  position: relative;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: var(--spacing-s);
+
+  .logo {
+    width: fit-content;
+  }
 
   a {
     font-size: var(--font-size-m);
@@ -50,20 +59,11 @@ header {
       flex-direction: row;
     }
 
-    .darkmode-toggle {
-      position: absolute;
-      font-size: 25px;
+    .desktop-darkmode-toggle {
       cursor: pointer;
-      top: var(--spacing-s);
-      right: var(--spacing-s);
-      
-      @media (min-width: 768px) {
-        font-size: 15px;
-        height: 15px;
-        position: relative;
-        top: unset;
-        right: unset;
-      }
+      font-size: 15px;
+      height: 15px;
+      position: relative;
     }
 
     li {
@@ -76,7 +76,8 @@ header {
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
+    position: relative;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -95,15 +96,12 @@ main {
 }
 
 footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  gap: var(--spacing-m);
+  display: none;
 
-  @media (min-width: 380px) {
-    flex-direction: row;
-    gap: auto;
+  @media (min-width: 769px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .meta-links {
@@ -112,7 +110,7 @@ footer {
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 380px) {
+    @media (min-width: 769px) {
       flex-direction: row;
       align-items: auto;
     }
@@ -133,7 +131,7 @@ footer {
   transition: all 0.5s ease-in-out;
   padding: var(--mobile-container-width-x);
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     padding: var(--desktop-container-width-x)
   }
 }
@@ -141,7 +139,7 @@ footer {
 .rich-text {
   padding: 0 var(--mobile-container-width-x);
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     padding: 0 var(--desktop-container-width-x);
   }
 }

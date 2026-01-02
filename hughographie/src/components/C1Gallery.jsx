@@ -30,7 +30,7 @@ export default function C1Gallery({ fields = {} }) {
     }, [fields.images]);
 
     return (
-        <section className="gallery-component">
+        <section>
             {fields.title && <h2>{fields.title}</h2>}
             <div className="gallery-grid">
                 {fields.images && fields.images.map((image, index) => {

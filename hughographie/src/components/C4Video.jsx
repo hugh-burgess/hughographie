@@ -14,7 +14,7 @@ const C4Video = ({ blok }) => {
             />} */}
         {blok.placeholder && <img
             {...imageProps}
-            className="placeholder" src={blok.placeholder.filename} alt="Placeholder image" />}
+            className="placeholder" src={blok.placeholder.filename} alt="Placeholder" />}
         {blok.caption &&
             <caption>© {blok.caption}</caption>}
     </div>
