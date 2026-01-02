@@ -63,6 +63,7 @@
 
     .meta-links {
         display: flex;
+        flex-direction: row;
         gap: var(--spacing-m);
         align-items: center;
         justify-content: center;
