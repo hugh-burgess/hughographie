@@ -29,7 +29,7 @@ export default function Page({ blok }) {
   }
 
   return (
-    <>
+    <div className={`page ${isBlogPage ? 'blog-page' : ''}`}>
       {isBlogPage && <Link className="blog-back" to="/blog/"><IoIosArrowRoundBack /></Link>}
       {blok.modules?.map((nestedBlok, index) => (
         <PageModulesRenderer contentType={nestedBlok.component} key={index} fields={nestedBlok} />
@@ -58,6 +58,6 @@ export default function Page({ blok }) {
           })}
         </div>
       ) : null}
-    </>
+    </div>
   );
 }

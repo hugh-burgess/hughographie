@@ -5,6 +5,7 @@ const C3ImageAndText = ({ fields }) => {
     const { variant, image, content } = fields;
     const imageProps = processedImageUrl(image.filename);
     const imageFirst = variant === 'imageText';
+    const availableText = content.content[0].content
     return (
         <section className={`image-and-text-grid ${imageFirst ? '' : 'reverse'}`}>
             {
@@ -20,7 +21,7 @@ const C3ImageAndText = ({ fields }) => {
                     />
                 </div>
             }
-            {content && <C2RichText className="text" content={content} />}
+            {availableText && <C2RichText className="text" content={content} />}
         </section>
     );
 }

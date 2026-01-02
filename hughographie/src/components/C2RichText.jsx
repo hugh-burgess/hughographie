@@ -4,14 +4,13 @@ const C2RichText = ({ content, className }) => {
     const richtext = Array.isArray(content) ? content : content.content;
 
     function renderContent(contentArray, parentKey) {
-        if (!contentArray) return null;
 
         return contentArray.map((item, index) => {
             const key = `${parentKey}-${index}`;
             switch (item.type) {
                 case 'paragraph':
                     if (!item.content) {
-                        return <br key={key} />;
+                        return <br />
                     }
                     return (
                         <p key={key}>
