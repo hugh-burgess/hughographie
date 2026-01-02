@@ -22,7 +22,7 @@ export default function Page({ blok }) {
     };
       fetchBlogs();
     }
-  }, []);
+  }, [isBlogLocationIndex]);
 
   if (!blok || Object.keys(blok).length === 0) {
     return <main>No page data</main>;
@@ -44,7 +44,7 @@ export default function Page({ blok }) {
                 key={teaserImage._uid}
                 className="grid-item loaded teaser-card"
               >
-                <NavLink to={`/${blog.full_slug}`}>
+                <Link to={`/${blog.full_slug}`}>
                   <img
                     {...imageProps}
                     alt={teaserImage.alt || `Teaser Card image ${index + 1}`}
@@ -52,7 +52,7 @@ export default function Page({ blok }) {
                   />
                   <div>{formatDate(blog.content.teaserDate)}</div>
                   <h3>{blog.content.teaserTitle}</h3>
-                </NavLink>
+                </Link>
               </div>
             );
           })}
