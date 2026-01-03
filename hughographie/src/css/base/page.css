@@ -4,4 +4,8 @@
         padding-left: 0;
         text-transform: none;
     }
+
+    img {
+        border-radius: 0;
+    }
 }
