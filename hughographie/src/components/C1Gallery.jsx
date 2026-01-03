@@ -32,10 +32,10 @@ export default function C1Gallery({ fields = {} }) {
     return (
         <section>
             {fields.title && <h2>{fields.title}</h2>}
-            <div className="grid">
+            <div className={`grid ${fields.isMasonary ? 'masonary' : ''}`}>
                 {fields.images && fields.images.map((image, index) => {
                     const imageProps = processedImageUrl(image.filename);
-                    
+
                     return (
                         <div
                             key={image._uid}

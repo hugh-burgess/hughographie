@@ -102,6 +102,26 @@
     @media (min-width: 1500px) {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    &.masonary {
+        display: block;
+        column-count: 1;
+        column-gap: var(--spacing-m);
+        padding: 0 var(--mobile-container-width-x);
+
+        @media (min-width: 769px) {
+            column-count: 3;
+        }
+
+        @media (min-width: 1200px) {
+        padding: var(--desktop-container-width-x) 0;
+    }
+    }
+
+    &.masonary .grid-item {
+        break-inside: avoid;
+        margin-bottom: var(--spacing-m);
+    }
 }
 
 .grid-item {
@@ -109,7 +129,7 @@
 
     & img {
         filter: blur(3px);
-        transition: filter 0.8s ease-in 0.5s;
+        transition: filter 0.4s ease-in 0.5s;
     }
 
     &.teaser-card {
