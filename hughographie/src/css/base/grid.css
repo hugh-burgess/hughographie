@@ -110,25 +110,57 @@
 
     &.teaser-card {
         margin-top: var(--spacing-m);
-        
+
         @media (min-width: 768px) {
             margin-top: var(--spacing-l);
         }
-        
+
         @media (min-width: 1201px) {
             margin-top: 0;
         }
 
         a {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-m);
-        align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-s);
+            align-items: center;
 
-        img {
-            aspect-ratio: 1/1;
+            img {
+                aspect-ratio: 4/3;
+            }
+
+            .date-genre {
+                color: var(---rgba-half-black);
+                display: flex;
+                gap: var(--spacing-m);
+                justify-content: center;
+                width: 100%;
+
+                .genre {
+                    position: relative;
+
+                    &::before {
+                        content: " ";
+                        position: absolute;
+                        left: calc(var(--spacing-s) * -1 - 2px);
+                        top: 50%;
+                        transform: translateY(-50%);
+                        border-radius: 50px;
+                        height: 5px;
+                        width: 5px;
+                        background: var(---rgba-half-black);
+                        z-index: 1;
+
+                    }
+                }
+            }
+
+            h3 {
+                margin: 0;
+                text-transform: none;
+            }
         }
-    }}
+    }
 }
 
 .grid-item.loaded {

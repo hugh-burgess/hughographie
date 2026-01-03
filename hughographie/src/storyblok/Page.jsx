@@ -16,10 +16,10 @@ export default function Page({ blok }) {
 
   useEffect(() => {
     if (isBlogLocationIndex) {
-    const fetchBlogs = async () => {
-      const { blogs } = await getBlogs();
-      setBlogs(blogs);
-    };
+      const fetchBlogs = async () => {
+        const { blogs } = await getBlogs();
+        setBlogs(blogs);
+      };
       fetchBlogs();
     }
   }, [isBlogLocationIndex]);
@@ -45,13 +45,16 @@ export default function Page({ blok }) {
                 className="grid-item loaded teaser-card"
               >
                 <Link to={`/${blog.full_slug}`}>
-                  <img
+                  {teaserImage && <img
                     {...imageProps}
-                    alt={teaserImage.alt || `Teaser Card image ${index + 1}`}
+                    alt={teaserImage.alt || `Teaser Card ${index + 1}`}
                     loading="lazy"
-                  />
-                  <div>{formatDate(blog.content.date)}</div>
-                  <h3>{blog.content.teaserTitle}</h3>
+                  />}
+                  {blog.content.teaserTitle && <h3>{blog.content.teaserTitle}</h3>}
+                  <span className='date-genre'>
+                    {blog.content.date && <div>{formatDate(blog.content.date)}</div>}
+                    {blog.content.teaserGenre && <div className='genre'>{" "}{blog.content.teaserGenre}</div>}
+                  </span>
                 </Link>
               </div>
             );

@@ -1,14 +1,7 @@
 .blog-page {
-    h1 {
+    h1, h2 {
         margin-left: 0;
         padding-left: 0;
-    }
-
-    h2 {
-        padding: 0 var(--mobile-container-width-x);
-
-        @media (min-width: 768px) {
-            padding: 0 var(--desktop-container-width-x);
-        }
+        text-transform: none;
     }
 }
