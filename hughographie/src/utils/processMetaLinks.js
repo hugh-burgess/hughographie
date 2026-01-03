@@ -16,7 +16,7 @@ export function processMetaLinks(metaItems, index, isMobile, isNavigation) {
     };
 
     const processMetaLinks = (meta, index) => {
-        const title = isNavigation ? metaLinkLogos[index] : meta.title
+        const title = isNavigation || !isMobile ? metaLinkLogos[index] : meta.title
         if (meta.link.linktype === 'story') {
             return <NavLink
                 key={index}

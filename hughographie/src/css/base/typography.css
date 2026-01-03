@@ -120,3 +120,11 @@ a.inverse.active {
         border-bottom: 1.5px solid var(--white);
     }
 }
+
+@media (min-width: 1201px) {
+    a {
+        &.blog-back {
+            padding-left: 0;
+        }
+    }
+}

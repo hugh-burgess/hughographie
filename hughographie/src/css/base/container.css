@@ -1,0 +1,5 @@
+:root {
+    --mobile-container-width-x: 20px;
+    --desktop-container-width-x: 30px;
+    --desktop-container-max-width: 1200px;
+}

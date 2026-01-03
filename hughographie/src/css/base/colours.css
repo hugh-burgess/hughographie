@@ -3,3 +3,25 @@
     --black: #000000;
     --grey: #808080;
 }
+
+.dark {
+  background: var(--black);
+
+  & * {
+    color: var(--white);
+  }
+}
+
+.light {
+  background: var(--white);
+
+  & * {
+    color: var(--black);
+  }
+}
+
+body {
+  &.dark {
+    background: var(--black);
+  }
+}

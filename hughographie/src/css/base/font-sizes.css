@@ -1,14 +1,11 @@
 :root {
     --font-size-stage: 50px;
-    --font-size-page-title: 28px;
     --font-size-heading-1: 28px;
     --font-size-heading-2: 24px;
     --font-size-heading-3: 20px;
 
     --font-size-body: 17px;
-    --font-size-body-small: 16px;
-
-    --font-size-secondary: 14px;
+    
     --font-size-caption: 13px;
 
     --font-size-xl: 28px;
@@ -22,15 +19,12 @@
 @media (min-width: 768px) {
     :root {
         --font-size-stage: 120px;
-        --font-size-page-title: 40px;
         --font-size-heading-1: 40px;
         --font-size-heading-2: 32px;
         --font-size-heading-3: 24px;
 
         --font-size-body: 18px;
-        --font-size-body-small: 16px;
-
-        --font-size-secondary: 16px;
+        
         --font-size-caption: 14px;
 
         --font-size-xl: 40px;

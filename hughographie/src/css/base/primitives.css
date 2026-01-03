@@ -1,6 +1,6 @@
 .root {
   display: grid;
-  grid-template-rows: 65px auto;
+  grid-template-rows: 65px 1fr auto;
   height: 100%;
   position: relative;
   margin: 0 auto;
@@ -12,29 +12,27 @@
   }
 }
 
-.dark {
-  background: var(--black);
-
-  & * {
-    color: var(--white);
-  }
+.App {
+  container-type: inline-size;
+  container-name: app;
 }
 
-.light {
-  background: var(--white);
-
-  & * {
-    color: var(--black);
-  }
+body {
+  height: 100%;
+  margin: 0;
 }
 
 header {
+  max-width: var(--desktop-container-max-width);
   position: relative;
   z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: var(--spacing-s);
+  margin: var(--mobile-container-width-x);
+  transition: all 0.5s ease-in-out;
+
 
   .logo {
     width: fit-content;
@@ -77,35 +75,43 @@ header {
   }
 
   @media (min-width: 769px) {
+    margin: var(--desktop-container-width-x);
     position: relative;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-}
 
-body {
-  height: 100%;
-  margin: 0;
-
-  &.dark {
-    background: var(--black);
+  @media (min-width: 1201px) {
+    margin: var(--mobile-container-width-x) auto 0;
+    width: 100%;
   }
 }
 
 main {
+  max-width: var(--desktop-container-max-width);
   margin: 0 auto;
   width: 100%;
   transition: all 0.5s ease-in-out;
 }
 
 footer {
-  display: none;
+  max-width: var(--desktop-container-max-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: var(--mobile-container-width-x);
+  transition: all 0.5s ease-in-out;
 
   @media (min-width: 769px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+    margin: var(--desktop-container-width-x);
+  }
+
+  @media (min-width: 1201px) {
+    margin: 0 auto var(--mobile-container-width-x);
+    width: 100%;
   }
 
   .meta-links {
@@ -113,10 +119,12 @@ footer {
     gap: var(--spacing-m);
     flex-direction: column;
     align-items: center;
+    margin-bottom: var(--spacing-m);
 
     @media (min-width: 769px) {
       flex-direction: row;
       align-items: auto;
+      margin-bottom: 0;
     }
   }
 
@@ -128,44 +136,4 @@ footer {
       text-decoration: underline;
     }
   }
-}
-
-.rich-text {
-  padding: 0 var(--mobile-container-width-x);
-
-  @media (min-width: 769px) {
-    padding: 0 var(--desktop-container-width-x);
-  }
-
-  @media (min-width: 1200px) {
-    padding: 0;
-  }
-}
-
-header,
-main,
-footer,
-.rich-text {
-  max-width: var(--desktop-container-max-width);
-}
-
-header,
-footer {
-  padding: var(--mobile-container-width-x);
-  transition: all 0.5s ease-in-out;
-  
-  @media (min-width: 769px) {
-    padding: var(--desktop-container-width-x);
-  }
-
-  @media (min-width: 1201px) {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-}
-
-.App {
-  container-type: inline-size;
-  container-name: app;
 }

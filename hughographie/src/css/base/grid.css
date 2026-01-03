@@ -1,6 +1,6 @@
 .image-and-text-grid {
     display: grid;
-    margin: 0 auto var(--spacing-l) auto;
+    margin: 0 auto var(--spacing-m) auto;
     padding: 0 var(--mobile-container-width-x);
     gap: var(--mobile-container-width-x);
 
