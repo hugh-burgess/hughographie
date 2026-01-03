@@ -1,21 +1,15 @@
-import { FaLongArrowAltDown } from "react-icons/fa";
+import processedImageUrl from "../utils/imageOptimization";
 import C4Video from "./C4Video";
 
 const C5Stage = ({ blok }) => {
-    const handleScrollDown = () => {
-        window.scrollTo({
-            top: document?.getElementById('end-scroll').offsetTop,
-            behavior: 'smooth'
-        });
-    }
-
+        const imageProps = processedImageUrl(blok.image.filename);
     return <>
         <section className="stage">
             {blok.video[0] && <C4Video blok={blok.video[0]} />}
-            {blok.title && <h1>{blok.title}</h1>}
-            {blok.showScrollButton && <button onClick={handleScrollDown} className="scroll-button"><FaLongArrowAltDown /></button>}
+            {blok.image && <img
+            {...imageProps}
+            className={`image ${blok.imagePosition || ''}`} src={blok.image.filename} alt="Stage" />}
         </section>
-        <div aria-hidden="true" id="end-scroll"></div>
     </>
 };
 
