@@ -27,7 +27,6 @@ header {
   position: relative;
   z-index: 1000;
   display: flex;
-  flex-direction: column;
   align-items: stretch;
   gap: var(--spacing-s);
   margin: var(--mobile-container-width-x);
