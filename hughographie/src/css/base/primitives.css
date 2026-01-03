@@ -38,7 +38,7 @@ header {
   }
 
   a {
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-s);
     text-decoration: none;
     color: var(--black);
     text-align: center;
@@ -74,7 +74,7 @@ header {
   }
 
   @media (min-width: 769px) {
-    margin: var(--desktop-container-width-x);
+    margin: var(--mobile-container-width-x);
     position: relative;
     flex-direction: row;
     justify-content: space-between;
@@ -82,7 +82,7 @@ header {
   }
 
   @media (min-width: 1201px) {
-    margin: var(--mobile-container-width-x) auto 0;
+    margin: var(--mobile-container-width-x) auto;
     width: 100%;
   }
 }
