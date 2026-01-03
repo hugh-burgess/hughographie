@@ -50,7 +50,7 @@ export default function Page({ blok }) {
                     alt={teaserImage.alt || `Teaser Card image ${index + 1}`}
                     loading="lazy"
                   />
-                  <div>{formatDate(blog.content.teaserDate)}</div>
+                  <div>{formatDate(blog.content.date)}</div>
                   <h3>{blog.content.teaserTitle}</h3>
                 </Link>
               </div>
