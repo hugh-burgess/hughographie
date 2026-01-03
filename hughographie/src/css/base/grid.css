@@ -114,8 +114,8 @@
         }
 
         @media (min-width: 1200px) {
-        padding: var(--desktop-container-width-x) 0;
-    }
+            padding: var(--desktop-container-width-x) 0;
+        }
     }
 
     &.masonary .grid-item {
@@ -157,9 +157,15 @@
             .date-genre {
                 color: var(---rgba-half-black);
                 display: flex;
-                gap: var(--spacing-m);
+                gap: var(--spacing-s);
                 justify-content: center;
+                align-items: center;
                 width: 100%;
+                font-size: var(--font-size-caption);
+
+                @media (min-width: 768px) {
+                    gap: var(--spacing-m);
+                }
 
                 .genre {
                     position: relative;
@@ -167,7 +173,7 @@
                     &::before {
                         content: " ";
                         position: absolute;
-                        left: calc(var(--spacing-s) * -1 - 2px);
+                        left: calc(var(--spacing-xs) * -1 - 3px);
                         top: 50%;
                         transform: translateY(-50%);
                         border-radius: 50px;
@@ -176,6 +182,10 @@
                         background: var(---rgba-half-black);
                         z-index: 1;
 
+                        @media (min-width: 768px) {
+                            left: calc(var(--spacing-s) * -1 - 2px);
+                        }
+
                     }
                 }
             }
@@ -183,6 +193,7 @@
             h3 {
                 margin: 0;
                 text-transform: none;
+                text-align: center;
             }
         }
     }

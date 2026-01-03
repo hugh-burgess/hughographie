@@ -1,6 +1,6 @@
 import { StoryblokComponent } from '@storyblok/react';
 import { useEffect, useState } from 'react';
-import { getGlobals } from './storyblok/api/client';
+import { getGlobals } from './utils/storyblokApiClient';
 import useDarkMode from './hooks/useDarkMode';
 
 export default function Layout({ children }) {

@@ -6,7 +6,7 @@ import App from "./App"
 import Layout from "./Layout"
 import './css';
 
-import Page from './storyblok/Page';
+import P1GenericPage from './pages/P1GenericPage';
 import Header from './globals/Header';
 import Footer from './globals/Footer';
 
@@ -16,9 +16,9 @@ storyblokInit({
   accessToken: process.env.REACT_APP_STORYBLOK_DELIVERY_API_TOKEN,
   use: [apiPlugin],
   components: {
-    page: Page,
-    Header: Header,
-    Footer: Footer,
+    P1GenericPage,
+    Header,
+    Footer,
   },
   apiOptions: {
     region: 'eu',
