@@ -6,44 +6,40 @@
     z-index: 1;
     margin-bottom: var(--spacing-m);
 
-    h1 {
+    .image {
         position: absolute;
-        opacity: 0;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        width: auto;
-        top: 50%;
-        animation: fade-in 1s ease-in-out forwards;
-        animation-delay: 0.5s;
-        color: var(--white);
-        font-size: var(--font-size-stage);
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .scroll-button {
-        display: none;
-
-        @media (min-width: 768px) {
-            display: block;
-            position: absolute;
-            transform: translateX(-50%);
-            font-size: var(--font-size-l);
-            bottom: var(--spacing-s);
-            right: var(--spacing-s);
-            background: none;
-            border: none;
-            cursor: pointer;
-            animation: floating 2s ease-in-out infinite;
-            
-            svg {
-                fill: var(--white);
-            }
-        }
+    .top {
+        object-position: top;
     }
 
-    @media (min-width: 769px) {
-        margin-bottom: 0;
+    .left {
+        object-position: left;
     }
 
+    .right {
+        object-position: right;
+    }
+
+    .center {
+        object-position: center;
+    }
+
+    .bottom {
+        object-position: bottom;
+    }
+    
+    .half-bottom {
+        object-position: 50% 80%;
+    }
+    .half-top {
+        object-position: 50% 20%;
+    }
 }
 
 @keyframes floating {

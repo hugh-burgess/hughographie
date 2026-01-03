@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { PageModulesRenderer } from '../utils/PageModulesRenderer';
 import formatDate from '../utils/formatDate';
 import { getBlogs } from './api/client';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import processedImageUrl from '../utils/imageOptimization';
 
 import { IoIosArrowRoundBack } from "react-icons/io";
