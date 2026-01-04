@@ -4,7 +4,8 @@
     height: auto;
     aspect-ratio: 2/1;
     z-index: 1;
-    margin-bottom: var(--spacing-m);
+    margin: var(--spacing-m) 0;
+    overflow: hidden;
 
     .image {
         position: absolute;
@@ -20,11 +21,15 @@
     }
 
     .left {
-        object-position: left;
+        object-position: 20% 50%;
+        object-fit: none;
+        scale: 1.2;
     }
 
     .right {
-        object-position: right;
+        object-position: 80% 50%;
+        object-fit: none;
+        scale: 1.2;
     }
 
     .center {
@@ -34,10 +39,11 @@
     .bottom {
         object-position: bottom;
     }
-    
+
     .half-bottom {
         object-position: 50% 80%;
     }
+
     .half-top {
         object-position: 50% 20%;
     }
@@ -52,17 +58,5 @@
 
     50% {
         transform: translateX(-50%) translateY(-40px);
-    }
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(0%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(-50%);
     }
 }
