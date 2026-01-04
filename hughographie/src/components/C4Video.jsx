@@ -7,11 +7,11 @@ const C4Video = ({ blok }) => {
             className="source"
             src={blok.source.filename}
             controls
-            autoPlay
             muted
             loop
+            poster={blok.placeholder.filename}
         />}
-        {blok.placeholder.filename && <img
+        {!blok.source.id && blok.placeholder.filename && <img
             {...imageProps}
             className="placeholder"
             alt="Placeholder" />}
