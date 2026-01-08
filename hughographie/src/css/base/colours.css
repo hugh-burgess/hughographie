@@ -9,6 +9,15 @@
 .dark {
   background: var(--black);
 
+
+  .back-to-top {
+    background: var(--white);
+
+    svg {
+      fill: var(--black);
+    }
+  }
+
   & * {
     color: var(--white);
   }
@@ -16,6 +25,16 @@
 
 .light {
   background: var(--white);
+
+
+  .back-to-top {
+    background: var(--black);
+    border: var(--white) 2px solid;
+
+    svg {
+      fill: var(--white);
+    }
+  }
 
   & * {
     color: var(--black);

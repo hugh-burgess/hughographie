@@ -8,9 +8,6 @@ if ('caches' in window) {
     });
 }
 
-/**
- * Cache an image in the browser's Cache API
- */
 export async function cacheImage(url) {
     if (!('caches' in window)) return;
     try {
@@ -24,9 +21,6 @@ export async function cacheImage(url) {
     }
 }
 
-/**
- * Get cached image URL or original URL
- */
 export async function getCachedImageUrl(url) {
     if (!('caches' in window)) return url;
     try {

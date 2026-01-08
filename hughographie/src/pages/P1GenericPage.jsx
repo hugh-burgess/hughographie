@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import C6BlogTeasers from "../components/C6BlogTeasers"
 
 import { IoIosArrowRoundBack } from "react-icons/io";
+import BackToTop from '../globals/BackToTop';
 
 export default function P1GenericPage({ blok }) {
   const location = useLocation()
@@ -29,6 +30,7 @@ export default function P1GenericPage({ blok }) {
 
   return (
     <div className={`page ${isBlogPage ? 'blog-page' : ''}`}>
+      <BackToTop />
       {isBlogPage && <Link className="blog-back" to="/blog/"><IoIosArrowRoundBack /></Link>}
       {blok.modules?.map((nestedBlok, index) => (
         <PageModulesRenderer contentType={nestedBlok.component} key={index} fields={nestedBlok} />

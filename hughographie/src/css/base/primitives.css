@@ -137,3 +137,29 @@ footer {
     }
   }
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: var(--spacing-s);
+  right: var(--spacing-xs);
+  padding: var(--spacing-s);
+  border-radius: 50%;
+  border: none;
+  z-index: 900;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  svg {
+    rotate: 90deg;
+    font-size: var(--font-size-m);
+  }
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+
+}
