@@ -1,51 +1,28 @@
-import { useEffect, useRef } from 'react';
 import processedImageUrl from '../utils/imageOptimization';
 
 export default function C1Gallery({ fields = {} }) {
-    const itemsRef = useRef([]);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('loaded');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.6,
-            rootMargin: '50px'
-        });
-
-        const items = itemsRef.current;
-        items.forEach((item) => {
-            if (item) observer.observe(item);
-        });
-
-        return () => {
-            items.forEach((item) => {
-                if (item) observer.unobserve(item);
-            });
-        };
-    }, [fields.images]);
-
     return (
         <section>
             {fields.title && <h2>{fields.title}</h2>}
             <div className={`grid ${fields.isMasonary ? 'masonary' : ''}`}>
                 {fields.images && fields.images.map((image, index) => {
-                    const imageProps = processedImageUrl(image.filename);
+                    // Get aspect ratio from image metadata if available, default to auto
+                    const aspectRatio = image.aspectRatio ? `${image.aspectRatio.width} / ${image.aspectRatio.height}` : 'auto';
+                    const imageProps = processedImageUrl(image.filename, aspectRatio);
 
                     return (
                         <div
                             key={image._uid}
                             className="grid-item"
-                            ref={(el) => (itemsRef.current[index] = el)}
+                            style={{
+                                aspectRatio: imageProps.aspectRatio,
+                                overflow: 'hidden'
+                            }}
                         >
                             <img
                                 {...imageProps}
                                 alt={image.alt || `Gallery image ${index + 1}`}
-                                loading="lazy"
+                                className="gallery-image"
                             />
                         </div>
                     );

@@ -17,7 +17,6 @@ const C3ImageAndText = ({ fields }) => {
                     <img
                         {...imageProps}
                         alt={image.alt || ""}
-                        loading="lazy"
                     />
                 </div>
             }

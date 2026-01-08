@@ -18,7 +18,6 @@ const C6BlogTeasers = ({ blogs }) => {
                             {teaserImage && <img
                                 {...imageProps}
                                 alt={teaserImage.alt || `Teaser Card ${index + 1}`}
-                                loading="lazy"
                             />}
                             <span className='date-genre'>
                                 {blog.content.date && <div>{formatDate(blog.content.date)}</div>}
