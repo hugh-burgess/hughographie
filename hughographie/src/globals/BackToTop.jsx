@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
+import Button from "./Button";
 
 const BackToTop = () => {
 
@@ -36,9 +37,7 @@ const BackToTop = () => {
     return (
         <>
             <div id='mobile-back-to-top-limit' aria-hidden="true" />
-            <button id="back-to-top" className="back-to-top" onClick={scrollToTop} aria-label="Back to top">
-                <IoIosArrowRoundBack />
-            </button>
+            <Button className="back-to-top" onClick={scrollToTop} id="back-to-top" aria-label="Back to top"><IoIosArrowRoundBack /></Button>
         </>
     )
 }

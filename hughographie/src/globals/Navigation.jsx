@@ -5,6 +5,7 @@ import { processMetaLinks } from '../utils/processMetaLinks';
 
 import { CiSun } from 'react-icons/ci';
 import { IoMoonOutline } from 'react-icons/io5';
+import Button from './Button';
 
 const Navigation = ({ blok, theme, footerItems, isMobile }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -35,14 +36,14 @@ const Navigation = ({ blok, theme, footerItems, isMobile }) => {
 
     return (
         <nav className={`navigation ${theme}`}>
-            <button
+            <Button
                 className={`burger-toggle ${isOpen ? 'open' : ''}`}
                 onClick={toggleMenu}
             >
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </Button>
 
             <div className={`nav-menu ${isOpen ? 'open' : ''}`}>
                 <ul>
