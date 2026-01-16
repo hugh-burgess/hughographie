@@ -1,5 +1,3 @@
-import { cacheImage } from './cacheHanders'
-
 const processedImageUrl = (imageUrl, aspectRatio = 'auto') => {
     if (!imageUrl) {
         return {
@@ -22,13 +20,6 @@ const processedImageUrl = (imageUrl, aspectRatio = 'auto') => {
 
     // XLDesktop: 1500 width
     const xlDesktopSrc = `${imageUrl}/m/1500x0/`;
-
-    // Cache all variants in the background
-    cacheImage(imageUrl);
-    cacheImage(mobileSrc);
-    cacheImage(tabletSrc);
-    cacheImage(desktopSrc);
-    cacheImage(xlDesktopSrc);
 
     return {
         src: imageUrl,  // Default fallback
