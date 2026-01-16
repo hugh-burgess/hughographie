@@ -1,25 +1,13 @@
-import processedImageUrl from "../utils/imageOptimization";
+import Image from "../globals/Image";
 import C2RichText from "./C2RichText";
 
 const C3ImageAndText = ({ fields }) => {
     const { variant, image, content, imageRatio, imagePosition } = fields;
-    const imageProps = processedImageUrl(image.filename);
     const imageFirst = variant === 'imageText';
     const availableText = content.content[0].content
     return (
         <section className={`image-and-text-grid ${imageFirst ? '' : 'reverse'} ${imageRatio} ${imagePosition}`}>
-            {
-                image &&
-                <div
-                    key={image._uid}
-                    className="image"
-                >
-                    <img
-                        {...imageProps}
-                        alt={image.alt || ""}
-                    />
-                </div>
-            }
+            {image && <Image image={image} containerClassName="image" />}
             {availableText && <C2RichText className="text" content={content} />}
         </section>
     );

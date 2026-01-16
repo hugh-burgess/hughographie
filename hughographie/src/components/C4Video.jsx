@@ -1,22 +1,16 @@
-import processedImageUrl from "../utils/imageOptimization";
+import Image from "../globals/Image";
 
 const C4Video = ({ blok }) => {
-    const imageProps = processedImageUrl(blok.placeholder.filename);
     return <div className="video">
-        {blok.source.id && <video
+        {!!blok.source.id ? <video
             className="source"
             src={blok.source.filename}
             controls
             muted
             loop
             poster={blok.placeholder.filename}
-        />}
-        {!blok.source.id && blok.placeholder.filename && <img
-            {...imageProps}
-            className="placeholder"
-            alt="Placeholder" />}
-        {blok.caption &&
-            <caption>© {blok.caption}</caption>}
+        /> : blok.placeholder.filename ? <Image image={blok.placeholder} className="placeholder" /> : null}
+        {blok.caption && <caption>© {blok.caption}</caption>}
     </div>
 
 }

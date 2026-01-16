@@ -1,14 +1,12 @@
-import processedImageUrl from "../utils/imageOptimization";
+import Image from "../globals/Image";
 
 const C5Stage = ({ blok }) => {
-    const imageProps = processedImageUrl(blok.image.filename);
     return <>
         <section className="stage">
-            {blok.image && <img
-                {...imageProps}
-                className={`image ${blok.imagePosition || ''}`}
-                alt="Stage" />
-                }
+            {blok.image && <Image
+                image={blok.image}
+                className={`image ${blok.imagePosition || ''}`} />
+            }
         </section>
     </>
 };
