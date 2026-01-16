@@ -26,7 +26,7 @@ const processedImageUrl = (imageUrl, aspectRatio = 'auto') => {
         srcSet: `${mobileSrc} 500w, ${tabletSrc} 800w, ${desktopSrc} 1200w, ${xlDesktopSrc} 1500w, ${imageUrl}`,
         sizes: '(max-width: 640px) 500px, (max-width: 1024px) 800px, (max-width: 1280px) 1200px, (max-width: 1500px) 1500px, 100%',
         loading: 'lazy',
-        aspectRatio
+        aspectratio: aspectRatio
     };
 }
 
