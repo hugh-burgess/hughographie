@@ -1,7 +1,9 @@
 :root {
-  --white: #ffffff;
+  --white: #FFFFFF;
   --black: #000000;
-  --grey: #808080;
+  --grey: #F7F7F7;
+  --rgba-grey: rgb(247, 247, 247, 1);
+  --rgba-half-grey: rgb(247, 247, 247, 0.5);
   ---rgba-black: rgba(0, 0, 0, 1);
   ---rgba-half-black: rgba(0, 0, 0, 0.5);
 }

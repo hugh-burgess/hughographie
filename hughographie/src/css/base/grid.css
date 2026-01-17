@@ -57,6 +57,7 @@
     }
 
     .image {
+        position: relative;
         grid-column: 1;
         grid-row: 1;
         height: fit-content;
@@ -89,6 +90,7 @@
         gap: var(--desktop-container-width-x);
 
         .image {
+            position: relative;
             grid-column: 1;
             grid-row: 1;
             max-width: 500px;
@@ -175,7 +177,13 @@
 .grid-item {
     position: relative;
     overflow: hidden;
+
     &.teaser-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-s);
+        align-items: center;
         margin-top: var(--spacing-m);
 
         @media (min-width: 768px) {
@@ -187,57 +195,55 @@
         }
 
         a {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-s);
-            align-items: center;
 
             img {
                 aspect-ratio: 4/3;
                 filter: none;
             }
 
-            .date-genre {
-                color: var(---rgba-half-black);
-                display: flex;
-                gap: var(--spacing-s);
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                font-size: var(--font-size-caption);
+        }
 
-                @media (min-width: 768px) {
-                    gap: var(--spacing-m);
-                }
+        .date-genre {
+            color: var(---rgba-half-black);
+            display: flex;
+            gap: var(--spacing-s);
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-size: var(--font-size-caption);
+            flex-wrap: wrap;
 
-                .genre {
-                    position: relative;
+            @media (min-width: 768px) {
+                gap: var(--spacing-m);
+            }
 
-                    &::before {
-                        content: " ";
-                        position: absolute;
-                        left: calc(var(--spacing-xs) * -1 - 3px);
-                        top: 50%;
-                        transform: translateY(-50%);
-                        border-radius: 50px;
-                        height: 5px;
-                        width: 5px;
-                        background: var(---rgba-half-black);
-                        z-index: 1;
+            .genre {
+                position: relative;
 
-                        @media (min-width: 768px) {
-                            left: calc(var(--spacing-s) * -1 - 2px);
-                        }
+                &::before {
+                    content: " ";
+                    position: absolute;
+                    left: calc(var(--spacing-xs) * -1 - 3px);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-radius: 50px;
+                    height: 5px;
+                    width: 5px;
+                    background: var(---rgba-half-black);
+                    z-index: 1;
 
+                    @media (min-width: 768px) {
+                        left: calc(var(--spacing-s) * -1 - 2px);
                     }
+
                 }
             }
+        }
 
-            h3 {
-                margin: 0;
-                text-transform: none;
-                text-align: center;
-            }
+        h3 {
+            margin: 0;
+            text-transform: none;
+            text-align: center;
         }
     }
 }

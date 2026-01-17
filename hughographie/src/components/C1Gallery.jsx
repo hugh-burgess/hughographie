@@ -5,8 +5,8 @@ export default function C1Gallery({ fields = {} }) {
         <section>
             {fields.title && <h2>{fields.title}</h2>}
             <div className={`grid ${fields.isMasonary ? 'masonary' : ''}`}>
-                {fields.images && fields.images.map(image => (
-                    <Image image={image} className="gallery-image" containerClassName="grid-item" hasContainerStyle />
+                {fields.images && fields.images.map((image, index) => (
+                    <Image key={index} image={image} className="gallery-image" containerClassName="grid-item" hasContainerStyle />
                 ))}
             </div>
         </section>
