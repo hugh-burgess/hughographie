@@ -24,18 +24,6 @@
         object-position: top;
     }
 
-    &.left img {
-        object-position: 20% 50%;
-        object-fit: none;
-        scale: 1.2;
-    }
-
-    &.right img {
-        object-position: 80% 50%;
-        object-fit: none;
-        scale: 1.2;
-    }
-
     &.center img {
         object-position: center;
     }
@@ -61,6 +49,18 @@
         grid-column: 1;
         grid-row: 1;
         height: fit-content;
+
+        &.landscape {
+            aspect-ratio: 16/9;
+        }
+
+        &.landscape-short {
+            aspect-ratio: 4/3;
+        }
+
+        &.portrait {
+            aspect-ratio: 9/16;
+        }
     }
 
     .text {

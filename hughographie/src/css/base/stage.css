@@ -20,18 +20,6 @@
         object-position: top;
     }
 
-    .left {
-        object-position: 20% 50%;
-        object-fit: none;
-        scale: 1.2;
-    }
-
-    .right {
-        object-position: 80% 50%;
-        object-fit: none;
-        scale: 1.2;
-    }
-
     .center {
         object-position: center;
     }
