@@ -6,7 +6,7 @@ const processedImageUrl = (image, aspectRatio = 'auto') => {
             sizes: '',
             loading: 'lazy',
             aspectRatio,
-            alt: image.alt
+            alt: ''
         };
     }
 
