@@ -5,7 +5,7 @@ const Image = ({ image, className, containerClassName, hasContainerStyle = false
     const [isLoaded, setIsLoaded] = useState(false)
     const aspectRatio = image.aspectRatio ? `${image.aspectRatio.width} / ${image.aspectRatio.height}` : 'auto';
     const imageProps = processedImageUrl(image, aspectRatio);
-    const processedImage = <img {...imageProps} className={className ?? null} onLoad={() => setIsLoaded(true)} />
+    const processedImage = <img {...imageProps} className={className ?? null} alt={image.alt ?? ""} onLoad={() => setIsLoaded(true)} />
 
     if (!image.filename) return null
 
