@@ -19,7 +19,6 @@ img {
     animation: fadeIn 0.4s ease-in-out;
 
     @media (max-width: 768px) {
-        width: 90%;
         margin: 0 auto;
     }
 }

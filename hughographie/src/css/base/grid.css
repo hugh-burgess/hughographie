@@ -2,7 +2,6 @@
     display: grid;
     margin: 0 auto var(--spacing-m) auto;
     padding: 0 var(--mobile-container-width-x);
-    gap: var(--mobile-container-width-x);
 
     &.landscape img {
         aspect-ratio: 16/9;
@@ -85,21 +84,17 @@
     @media (min-width: 769px) {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-        margin: var(--spacing-l) auto;
-        padding: 0 var(--desktop-container-width-x);
-        gap: var(--desktop-container-width-x);
 
         .image {
             position: relative;
             grid-column: 1;
             grid-row: 1;
-            max-width: 500px;
-            justify-self: self;
         }
 
         .text {
             grid-column: 2;
             grid-row: 1;
+            padding-left: var(--desktop-container-width-x);
 
             p {
                 margin: 0;
@@ -110,13 +105,14 @@
             .image {
                 grid-column: 2;
                 grid-row: 1;
-                max-width: 500px;
                 justify-self: end;
             }
 
             .text {
                 grid-column: 1;
                 grid-row: 1;
+                padding-right: var(--desktop-container-width-x);
+                padding-left: unset;
 
                 p {
                     margin: 0;
@@ -184,15 +180,6 @@
         flex-direction: column;
         gap: var(--spacing-s);
         align-items: center;
-        margin-top: var(--spacing-m);
-
-        @media (min-width: 768px) {
-            margin-top: var(--spacing-l);
-        }
-
-        @media (min-width: 1201px) {
-            margin-top: 0;
-        }
 
         a {
 
