@@ -6,6 +6,7 @@ import C6BlogTeasers from "../components/C6BlogTeasers"
 
 import { IoIosArrowRoundBack } from "react-icons/io";
 import BackToTop from '../globals/BackToTop';
+import formatDate from '../utils/formatDate';
 
 export default function P1GenericPage({ blok }) {
   const location = useLocation()
@@ -28,16 +29,25 @@ export default function P1GenericPage({ blok }) {
     return <main>No page data</main>;
   }
 
+  console.log('blok', blok)
+
   return (
     <div className={`page ${isBlogPage ? 'blog-page' : ''}`}>
       <BackToTop />
-      {isBlogPage && <Link className="blog-back" to="/blog/"><IoIosArrowRoundBack /></Link>}
+      {isBlogPage && <div className='blog-info'>
+        <Link className="blog-back" to="/blog/"><IoIosArrowRoundBack /></Link>
+        <span>
+          {blok.date && <div>{formatDate(blok.date)}</div>}
+          {blok.teaserGenre && <div>{blok.teaserGenre}</div>}
+        </span>
+      </div>
+      }
       {blok.modules?.map((nestedBlok, index) => (
         <PageModulesRenderer contentType={nestedBlok.component} key={index} fields={nestedBlok} />
       ))}
       {isBlogLocationIndex && blogs?.length > 0 ? (
         <C6BlogTeasers blogs={blogs} />
       ) : null}
-        </div>
-      );
+    </div>
+  );
 }

@@ -42,7 +42,8 @@ h3 {
     line-height: 1.3;
 }
 
-a, span {
+a,
+span {
     position: relative;
     font-size: var(--font-size-body);
     font-family: var(--font-secondary);
@@ -51,8 +52,9 @@ a, span {
     transition: opacity 0.2s ease;
 
     &.blog-back {
+        height: 1em;
         font-size: var(--font-size-xl);
-        padding-left: calc(var(--mobile-container-width-x) - 5px);
+        transform: translateX(-6px);
     }
 }
 
@@ -89,8 +91,8 @@ a.inverse.active {
     a {
         font-size: var(--font-size-body);
 
-        &.blog-back {
-            padding-left: calc(var(--desktop-container-width-x) - 10px);
+        .blog-back {
+            transform: translateX(-9px);
         }
     }
 
