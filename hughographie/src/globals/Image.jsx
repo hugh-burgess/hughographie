@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import processedImageUrl from "../utils/imageOptimization";
 
-const Image = ({ image, className, containerClassName, hasContainerStyle = false, objectPosition, aspectRatio}) => {
+const Image = ({ image, className, containerClassName, hasContainerStyle = false, objectPosition, aspectRatio }) => {
     const [isLoaded, setIsLoaded] = useState(false)
-    if (!image) return null
+    const [runCleanup, setRunCleanup] = useState(false)
     const imageProps = processedImageUrl(image, aspectRatio);
     const processedImage = <img {...imageProps} className={`${className ?? ''} ${objectPosition ?? ''} ${aspectRatio ?? ''}`} alt={image.alt ?? ""} onLoad={() => setIsLoaded(true)} />
+
+    useEffect(() => {
+        if (isLoaded) {
+            setTimeout(() => {
+                setRunCleanup(true)
+            }, 500)
+        }
+    }, [isLoaded])
 
     if (!image.filename) return null
 
@@ -21,14 +29,14 @@ const Image = ({ image, className, containerClassName, hasContainerStyle = false
                 } : null}
             >
                 {processedImage}
-                <div className={`skeleton-image ${isLoaded ? 'loaded' : ''}`} />
+                <div className={`skeleton-image ${isLoaded ? 'loaded' : ''} ${runCleanup ? 'cleanup' : ''}`} />
             </div>
         )
     }
 
     return <>
         {processedImage}
-        <div className={`skeleton-image ${isLoaded ? 'loaded' : ''}`} />
+        <div className={`skeleton-image ${isLoaded ? 'loaded' : ''} ${runCleanup ? 'cleanup' : ''}`} />
     </>
 }
 

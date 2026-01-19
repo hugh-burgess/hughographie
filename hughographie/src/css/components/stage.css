@@ -3,17 +3,18 @@
     height: auto;
     z-index: 1;
     overflow: hidden;
-    margin: 0 var(--mobile-container-width-x);
-
-    @media (min-width: 1201px) {
-        margin: 0;
-    }
+    padding: 0 var(--mobile-container-width-x);
 
     .image {
         z-index: -1;
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .skeleton-image {
+        width: calc(100% - (var(--mobile-container-width-x) * 2));
+        transform: translateX(var(--mobile-container-width-x));
     }
 
     &.full {
@@ -42,6 +43,16 @@
 
     .half-top {
         object-position: 50% 20%;
+    }
+
+    @media (min-width: 1201px) {
+        padding: 0;
+
+        .skeleton-image {
+            width: 100%;
+            transform: none;
+        }
+
     }
 }
 
