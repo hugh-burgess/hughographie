@@ -4,10 +4,9 @@ import formatDate from "../utils/formatDate"
 import Image from "../globals/Image";
 
 const C6BlogTeasers = ({ blogs }) => {
-    const blogss = Array(10).fill(blogs[0])
     return (
         <section className='blog-teasers grid'>
-            {blogss.map(blog => {
+            {blogs.map(blog => {
                 const teaserImage = blog.content.teaserImage
                 return (
                     <div
