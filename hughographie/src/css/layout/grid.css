@@ -153,58 +153,65 @@
         gap: var(--spacing-s);
         align-items: center;
         padding: 0 var(--mobile-container-width-x);
+        outline: 3px solid var(--white);
+        border-radius: 5px;
 
         a {
+            position: relative;
             width: 100%;
 
             img {
                 aspect-ratio: 4/3;
                 filter: none;
             }
-
         }
 
-        .date-genre {
-            color: var(---rgba-half-black);
-            display: flex;
-            gap: var(--spacing-s);
-            justify-content: center;
-            align-items: center;
+        .teaser-info {
+            position: absolute;
+            bottom: 0;
             width: 100%;
-            font-size: var(--font-size-caption);
-            flex-wrap: wrap;
+            height: 100%;
+            padding-bottom: var(--spacing-s);
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
 
-            @media (min-width: 768px) {
-                gap: var(--spacing-m);
+            &>* {
+                color: var(--white);
+                z-index: 1;
             }
 
-            .genre {
-                position: relative;
+            .date-genre {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 var(--spacing-m);
+                font-size: var(--font-size-caption);
+                flex-wrap: wrap;
 
-                &::before {
-                    content: " ";
-                    position: absolute;
-                    left: calc(var(--spacing-xs) * -1 - 3px);
-                    top: 50%;
-                    transform: translateY(-50%);
-                    border-radius: 50px;
-                    height: 5px;
-                    width: 5px;
-                    background: var(---rgba-half-black);
-                    z-index: 1;
-
-                    @media (min-width: 768px) {
-                        left: calc(var(--spacing-s) * -1 - 2px);
-                    }
-
+                &>* {
+                    color: var(--white);
                 }
             }
-        }
 
-        h3 {
-            margin: 0;
-            text-transform: none;
-            text-align: center;
+            h3 {
+                margin: 0;
+                text-transform: none;
+                text-align: start;
+                padding: 0 var(--spacing-m);
+            }
+
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                content: '';
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 90%);
+                border-radius: 0 0 5px 5px;
+            }
         }
     }
 }

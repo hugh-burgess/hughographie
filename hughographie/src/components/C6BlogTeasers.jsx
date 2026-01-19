@@ -15,12 +15,14 @@ const C6BlogTeasers = ({ blogs }) => {
                     >
                         <Link to={`/${blog.full_slug}`}>
                             {teaserImage && <Image image={teaserImage} />}
+                            <div className="teaser-info">
+                                <span className='date-genre'>
+                                    {blog.content.date && <div>{formatDate(blog.content.date)}</div>}
+                                    {blog.content.teaserGenre && <div>{blog.content.teaserGenre}</div>}
+                                </span>
+                                {blog.content.teaserTitle && <h3>{blog.content.teaserTitle}</h3>}
+                            </div>
                         </Link>
-                        <span className='date-genre'>
-                            {blog.content.date && <div>{formatDate(blog.content.date)}</div>}
-                            {blog.content.teaserGenre && <div className='genre'>{" "}{blog.content.teaserGenre}</div>}
-                        </span>
-                        {blog.content.teaserTitle && <h3>{blog.content.teaserTitle}</h3>}
                     </div>
                 );
             })}
