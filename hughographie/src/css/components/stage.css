@@ -3,10 +3,10 @@
     height: auto;
     z-index: 1;
     overflow: hidden;
-    padding: 0 var(--mobile-container-width-x);
+    margin: 0 var(--mobile-container-width-x);
 
     @media (min-width: 1201px) {
-        padding: 0;
+        margin: 0;
     }
 
     .image {

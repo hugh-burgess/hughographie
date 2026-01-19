@@ -29,8 +29,6 @@ export default function P1GenericPage({ blok }) {
     return <main>No page data</main>;
   }
 
-  console.log('blok', blok)
-
   return (
     <div className={`page ${isBlogPage ? 'blog-page' : ''}`}>
       <BackToTop />
