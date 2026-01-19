@@ -36,7 +36,7 @@ header {
 
   .logo {
     width: fit-content;
-    font-weight: 800;
+    font-family: var(--font-secondary-bold);
   }
 
   a {
@@ -140,8 +140,4 @@ footer {
 
 section {
   margin: 0 auto var(--spacing-m) auto;
-
-  &.no-margin {
-    margin: 0;
-  }
 }

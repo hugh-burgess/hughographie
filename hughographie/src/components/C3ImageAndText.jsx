@@ -6,8 +6,11 @@ const C3ImageAndText = ({ fields }) => {
     const imageFirst = variant === 'imageText';
     const availableText = content.content[0].content
     return (
-        <section className={`image-and-text-grid ${imageFirst ? '' : 'reverse'} ${imageRatio ?? ''} ${imagePosition ?? ''}`}>
-            {image && <Image image={image} containerClassName={`image ${imageRatio ?? ''}`} />}
+        <section className={`image-and-text-grid ${imageFirst ? '' : 'reverse'}`}>
+            {image && <Image image={image} containerClassName="image"
+                objectPosition={imagePosition}
+                aspectRatio={imageRatio}
+            />}
             {availableText && <C2RichText className="text" content={content} />}
         </section>
     );

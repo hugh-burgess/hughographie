@@ -3,6 +3,12 @@
   src: local('Asap'), url(/public/fonts/Asap.ttf) format('truetype');
   font-weight: 100;
 }
+
+@font-face {
+  font-family: 'Asap Bold';
+  src: local('Asap'), url(/public/fonts/Asap.ttf) format('truetype');
+  font-weight: 400;
+}
 @font-face {
   font-family: 'Helvetica Light';
   src: local('Helvetica Light'), url(/public/fonts/helvetica-light.ttf) format('truetype');

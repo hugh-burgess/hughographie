@@ -11,12 +11,48 @@
 img {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
     image-orientation: from-image;
     border-radius: 5px;
     animation: fadeIn 0.4s ease-in-out;
+
+    &.landscape {
+        aspect-ratio: 16/9;
+    }
+
+    &.landscape-short {
+        aspect-ratio: 4/3;
+    }
+
+    &.portrait {
+        aspect-ratio: 9/16;
+    }
+
+    &.square {
+        aspect-ratio: 1/1;
+    }
+
+    &.top {
+        object-position: top;
+    }
+
+    &.center {
+        object-position: center;
+    }
+
+    &.bottom {
+        object-position: bottom;
+    }
+
+    &.half-bottom {
+        object-position: 50% 80%;
+    }
+
+    &.half-top {
+        object-position: 50% 20%;
+    }
 
     @media (max-width: 768px) {
         margin: 0 auto;
@@ -28,9 +64,7 @@ img {
     background-color: var(--grey);
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    transform: translateY(-100%);
     opacity: 1;
     transition: all 0.4s ease-in-out 0.2s;
 
