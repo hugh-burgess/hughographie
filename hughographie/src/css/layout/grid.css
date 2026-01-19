@@ -130,23 +130,28 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--spacing-m);
-    padding: 0 var(--mobile-container-width-x);
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
         margin-bottom: var(--spacing-m);
     }
 
-    @media (min-width: 768px) {
-        padding: 0 var(--desktop-container-width-x);
-    }
-
-    @media (min-width: 1200px) {
-        padding: var(--desktop-container-width-x) 0;
-    }
-
     @media (min-width: 1500px) {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.blog-teasers {
+        @media (min-width: 769px) {
+            padding: 0 var(--mobile-container-width-x);
+
+            .teaser-card {
+                padding: 0;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            padding: 0;
+        }
     }
 
     &.masonary {
@@ -160,7 +165,7 @@
         }
 
         @media (min-width: 1200px) {
-            padding: var(--desktop-container-width-x) 0;
+            padding: 0;
         }
     }
 
@@ -180,8 +185,10 @@
         flex-direction: column;
         gap: var(--spacing-s);
         align-items: center;
+        padding: 0 var(--mobile-container-width-x);
 
         a {
+            width: 100%;
 
             img {
                 aspect-ratio: 4/3;
