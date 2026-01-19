@@ -5,7 +5,7 @@ import Image from "../globals/Image";
 
 const C6BlogTeasers = ({ blogs }) => {
     return (
-        <div className='blog-teasers grid'>
+        <section className='blog-teasers grid'>
             {blogs.map(blog => {
                 const teaserImage = blog.content.teaserImage
                 return (
@@ -24,7 +24,7 @@ const C6BlogTeasers = ({ blogs }) => {
                     </div>
                 );
             })}
-        </div>
+        </section>
     )
 
 }

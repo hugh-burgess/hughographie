@@ -3,7 +3,6 @@
     height: auto;
     aspect-ratio: 2/1;
     z-index: 1;
-    margin: var(--spacing-m) 0;
     overflow: hidden;
     padding: 0 var(--mobile-container-width-x);
 

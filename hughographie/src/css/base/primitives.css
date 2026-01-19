@@ -106,7 +106,7 @@ footer {
 
   @media (min-width: 769px) {
     flex-direction: row;
-    margin: var(--desktop-container-width-x);
+    margin: 0 var(--desktop-container-width-x) var(--desktop-container-width-x);
   }
 
   @media (min-width: 1201px) {
@@ -138,28 +138,10 @@ footer {
   }
 }
 
-.back-to-top {
-  position: fixed;
-  bottom: var(--spacing-s);
-  right: var(--spacing-xs);
-  padding: var(--spacing-s);
-  border-radius: 50%;
-  border: none;
-  z-index: 900;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+section {
+  margin: 0 auto var(--spacing-m) auto;
 
-  &.visible {
-    opacity: 1;
+  &.no-margin {
+    margin: 0;
   }
-
-  svg {
-    rotate: 90deg;
-    font-size: var(--font-size-m);
-  }
-
-  @media (min-width: 769px) {
-    display: none;
-  }
-
 }
