@@ -21,7 +21,7 @@
     }
 
     &.half {
-        aspect-ratio: 4/1;
+        aspect-ratio: 3/1;
     }
 
     .top {
