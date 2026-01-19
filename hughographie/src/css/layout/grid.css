@@ -79,12 +79,17 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
     gap: var(--spacing-m);
+    padding: 0 var(--mobile-container-width-x);
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
         margin-bottom: var(--spacing-m);
+    }
+
+    @media (min-width: 1200px) {
+        padding: 0;
     }
 
     @media (min-width: 1500px) {
@@ -109,14 +114,9 @@
         display: block;
         column-count: 1;
         column-gap: var(--spacing-m);
-        padding: 0 var(--mobile-container-width-x);
 
         @media (min-width: 769px) {
             column-count: 3;
-        }
-
-        @media (min-width: 1200px) {
-            padding: 0;
         }
     }
 

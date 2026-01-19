@@ -1,12 +1,15 @@
 import Image from "../globals/Image";
 
 const C5Stage = ({ blok }) => {
-    const item = blok.image[0]
+    const stageImage = blok.item[0]
+    const stageHeight = blok.height ? blok.height : 'full'
     return <>
-        <section className="stage">
-            {item && <Image
-                image={item.image}
-                className={`image ${item.imagePosition || ''}`} />
+        <section className={`stage ${stageHeight}`}>
+            {stageImage && <Image
+                image={stageImage.image}
+                className="image" 
+                objectPosition={stageImage.objectPosition}
+                />
             }
         </section>
     </>

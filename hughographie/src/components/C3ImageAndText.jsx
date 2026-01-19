@@ -2,14 +2,15 @@ import Image from "../globals/Image";
 import C2RichText from "./C2RichText";
 
 const C3ImageAndText = ({ fields }) => {
-    const { variant, image, content, imageRatio, imagePosition } = fields;
+    const { variant, image, content } = fields;
     const imageFirst = variant === 'imageText';
     const availableText = content.content[0].content
+    const imageItem = image[0]
     return (
         <section className={`image-and-text-grid ${imageFirst ? '' : 'reverse'}`}>
-            {image && <Image image={image} containerClassName="image"
-                objectPosition={imagePosition}
-                aspectRatio={imageRatio}
+            {imageItem && <Image image={imageItem.image} containerClassName="image"
+                objectPosition={imageItem.objectPosition}
+                aspectRatio={imageItem.aspectRatio}
             />}
             {availableText && <C2RichText className="text" content={content} />}
         </section>

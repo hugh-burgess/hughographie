@@ -140,4 +140,9 @@ footer {
 
 section {
   margin: 0 auto var(--spacing-m) auto;
+
+  .masonary,
+  .masonary>.grid-item:last-of-type {
+    margin-bottom: 0;
+  }
 }
