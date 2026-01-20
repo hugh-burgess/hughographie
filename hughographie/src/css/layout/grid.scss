@@ -1,3 +1,5 @@
+@import "../base/media-queries.scss";
+
 .image-and-text-grid {
     display: grid;
     padding: 0 var(--mobile-container-width-x);
@@ -32,7 +34,7 @@
         }
     }
 
-    @media (min-width: 769px) {
+    @include tablet {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
 
@@ -72,7 +74,7 @@
         }
     }
 
-    @media (min-width: 1200px) {
+    @include desktop {
         padding: 0;
     }
 }
@@ -83,21 +85,21 @@
     gap: var(--spacing-m);
     padding: 0 var(--mobile-container-width-x);
 
-    @media (max-width: 768px) {
+    @include mobile {
         grid-template-columns: 1fr;
         margin-bottom: var(--spacing-m);
     }
 
-    @media (min-width: 1200px) {
+    @include desktop {
         padding: 0;
     }
 
-    @media (min-width: 1500px) {
+    @include desktopXL {
         grid-template-columns: repeat(3, 1fr);
     }
 
     &.blog-teasers {
-        @media (min-width: 769px) {
+        @include tablet {
             padding: 0 var(--mobile-container-width-x);
 
             .teaser-card {
@@ -105,7 +107,7 @@
             }
         }
 
-        @media (min-width: 1201px) {
+        @include desktop {
             padding: 0;
         }
     }
@@ -115,7 +117,7 @@
         column-count: 1;
         column-gap: var(--spacing-m);
 
-        @media (min-width: 769px) {
+        @include tablet {
             column-count: 3;
         }
     }

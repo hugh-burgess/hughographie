@@ -1,8 +1,10 @@
+@import "../base/media-queries.scss";
+
 .navigation {
     display: block;
     margin-left: auto;
 
-    @media (min-width: 769px) {
+    @include tablet {
         display: none;
     }
 

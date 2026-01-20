@@ -1,3 +1,4 @@
-import "./primitives.css";
-import "./spacing.css";
-import "./colours.css";
+import "./primitives.scss";
+import "./spacing.scss";
+import "./colours.scss";
+import "./media-queries.scss";

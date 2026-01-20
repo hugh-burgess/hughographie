@@ -1,3 +1,5 @@
+@import "../base/media-queries.scss";
+
 .blog-page {
 
     .blog-info {
@@ -16,7 +18,7 @@
             opacity: 0.7;
         }
 
-        @media (min-width: 1201px) {
+        @include desktop {
             padding: 0 0 var(--mobile-container-width-x);
         }
     }

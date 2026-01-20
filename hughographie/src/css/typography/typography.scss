@@ -1,3 +1,5 @@
+@import "../base/media-queries.scss";
+
 :root {
     --font-primary: 'Helvetica Light', sans-serif;
     --font-secondary: 'Asap', sans-serif;
@@ -69,7 +71,7 @@ a.inverse.active {
     border-bottom: 2px solid var(--white);
 }
 
-@media (min-width: 768px) {
+@include tablet {
     p {
         font-size: var(--font-size-body);
     }
@@ -127,7 +129,7 @@ a.inverse.active {
     }
 }
 
-@media (min-width: 1201px) {
+@include desktop {
     a {
         &.blog-back {
             padding-left: 0;

@@ -1,5 +1,5 @@
-import "./image.css";
-import "./video.css";
-import "./stage.css";
-import "./rich-text.css";
-import "./back-to-top.css";
+import "./image.scss";
+import "./video.scss";
+import "./stage.scss";
+import "./rich-text.scss";
+import "./back-to-top.scss";

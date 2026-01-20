@@ -1,3 +1,5 @@
+@import "../base/media-queries.scss";
+
 .stage {
     position: relative;
     height: auto;
@@ -45,7 +47,7 @@
         object-position: 50% 20%;
     }
 
-    @media (min-width: 1201px) {
+    @include desktop {
         padding: 0;
 
         .skeleton-image {
