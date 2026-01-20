@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
 import App from "./App"
 import Layout from "./Layout"
-import './css';
+import './styles';
 
 import P1GenericPage from './pages/P1GenericPage';
 import Header from './globals/Header';
