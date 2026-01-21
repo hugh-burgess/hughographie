@@ -11,4 +11,20 @@
     @include desktop {
         padding: 0;
     }
+
+    h1 > * {
+        font-size: var(--font-size-heading-1);
+    }
+
+    h2 > * {
+        font-size: var(--font-size-heading-2);
+    }
+
+    h3 > * {
+        font-size: var(--font-size-heading-3);
+    }
+
+    h1, h2, h3 {
+        margin-top: 0;
+    }
 }
