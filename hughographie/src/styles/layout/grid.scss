@@ -81,7 +81,7 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
     gap: var(--spacing-m);
     padding: 0 var(--mobile-container-width-x);
 
@@ -114,8 +114,8 @@
 
     &.masonary {
         display: block;
-        column-count: 1;
         column-gap: var(--spacing-m);
+        column-count: 1;
 
         @include tablet {
             column-count: 3;

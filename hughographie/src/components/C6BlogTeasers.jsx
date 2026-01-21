@@ -4,9 +4,10 @@ import formatDate from "../utils/formatDate"
 import Image from "../globals/Image";
 
 const C6BlogTeasers = ({ blogs }) => {
+    const blogsSortedByDate = blogs.sort((a, b) => a.content.date > b.content.date)
     return (
         <section className='blog-teasers grid'>
-            {blogs.map(blog => {
+            {blogsSortedByDate.map(blog => {
                 const teaserImage = blog.content.teaserImage
                 return (
                     <div

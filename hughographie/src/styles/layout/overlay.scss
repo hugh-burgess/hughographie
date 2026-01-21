@@ -30,5 +30,7 @@
 
 .lightbox,
 .overlay {
-    cursor: pointer;
+    @include tablet {
+        cursor: pointer;
+    }
 }

@@ -1,7 +1,13 @@
 @import "./media-queries.scss";
 
+html {
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
 .root {
-  
+
   display: grid;
   grid-template-rows: 65px 1fr auto;
   height: 100%;
@@ -35,6 +41,10 @@ header {
   gap: var(--spacing-s);
   margin: var(--mobile-container-width-x) var(--mobile-container-width-x) calc(var(--mobile-container-width-x) * 2);
   transition: all 0.5s ease-in-out;
+
+  &.overlay-visible {
+    z-index: unset;
+  }
 
 
   .logo {
