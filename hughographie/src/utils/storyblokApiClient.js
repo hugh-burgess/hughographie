@@ -30,14 +30,13 @@ export async function getBlogs() {
         const response = await storyblokApi.get('cdn/stories/', {
             version: 'draft',
             starts_with: 'blog',
-            excluding_ids: 129835727366736 // Blog Index ID
         });
 
         return {
             blogs: response.data.stories,
         };
     } catch (error) {
-        console.error('Error fetching globals:', error);
+        console.error('Error fetching blogs:', error);
         return null;
     }
 }

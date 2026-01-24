@@ -5,7 +5,7 @@
   bottom: var(--spacing-s);
   right: var(--spacing-xs);
   padding: var(--spacing-s);
-  border-radius: 50%;
+  border-radius: var(--border-radius-round);
   border: none;
   z-index: 900;
   opacity: 0;

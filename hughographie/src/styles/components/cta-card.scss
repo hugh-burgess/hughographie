@@ -1,0 +1,48 @@
+@import "../base/media-queries.scss";
+
+.cta-card {
+    border-radius: var(--border-radius-large);
+    margin-left: var(--mobile-container-width-x);
+    margin-right: var(--mobile-container-width-x);
+    max-width: var(--desktop-container-max-width);
+
+    @include desktop {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: calc(var(--mobile-container-width-x) / 2)var(--mobile-container-width-x);
+
+        p {
+            margin: 0;
+            text-align: center;
+        }
+
+        .link {
+            .arrow {
+                rotate: 180deg;
+                font-size: var(--font-size-caption);
+                transition: all 0.5s ease-in-out;
+            }
+        }
+
+            @include desktop {
+                &:hover .link .arrow {
+                    transform: translateX(-8px);
+                }
+            }
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+        @include desktop {
+            padding: calc(var(--desktop-container-width-x) / 2) var(--desktop-container-width-x);
+        }
+    }
+}

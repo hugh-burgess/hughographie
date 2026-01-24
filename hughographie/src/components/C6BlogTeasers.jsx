@@ -8,6 +8,7 @@ const C6BlogTeasers = ({ blogs }) => {
     return (
         <section className='blog-teasers grid'>
             {blogsSortedByDate.map(blog => {
+                if (!!blog.content.hideTeaser) return null
                 const teaserImage = blog.content.teaserImage
                 return (
                     <div

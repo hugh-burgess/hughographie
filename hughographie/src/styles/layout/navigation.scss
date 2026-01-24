@@ -22,7 +22,7 @@
         width: 25px;
         height: 3px;
         background-color: currentColor;
-        border-radius: 2px;
+        border-radius: var(--border-radius-tiny);
         transition: all 0.3s ease;
     }
 
