@@ -11,10 +11,10 @@ const CTACard = ({ blok }) => {
                 top: 0,
                 behavior: "smooth",
             });
-        }, 500)
+        }, 300)
     }
     return (
-        <section className="cta-card">
+        <section className={`cta-card ${blok.variant ?? ''}`}>
             <Link to={`/${blok.link.cached_url}`} onClick={() => handleClick()}>
                 <div className="inner">
                     {blok.text && <p>{blok.text}</p>}

@@ -6,11 +6,6 @@
     margin-right: var(--mobile-container-width-x);
     max-width: var(--desktop-container-max-width);
 
-    @include desktop {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
     .inner {
         display: flex;
         flex-direction: column;
@@ -31,18 +26,48 @@
             }
         }
 
-            @include desktop {
-                &:hover .link .arrow {
-                    transform: translateX(-8px);
-                }
-            }
-
         @include tablet {
             flex-direction: row;
         }
 
         @include desktop {
             padding: calc(var(--desktop-container-width-x) / 2) var(--desktop-container-width-x);
+
+            &:hover .link .arrow {
+                transform: translateX(-8px);
+            }
         }
+    }
+
+    &.left,
+    &.right,
+    &.center {
+        @include tablet {
+            max-width: calc(50% - calc(var(--desktop-container-width-x) / 2));
+        }
+    }
+
+    &.right {
+        @include tablet {
+            margin-left: auto;
+        }
+    }
+
+    &.left {
+        @include tablet {
+            margin-right: auto;
+        }
+    }
+
+    &.center {
+        @include tablet {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @include desktop {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
