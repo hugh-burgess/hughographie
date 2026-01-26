@@ -29,17 +29,19 @@ const Image = ({ image, className, containerClassName, hasContainerStyle = false
                     position: 'relative'
                 } : null}
             >
-                <div className="inner">
+                <div className={`inner ${image.alt ? 'has-alt' : ''}`}>
                     {processedImage}
                     {skeletonImage}
+                    {image.alt && <span>{image.alt}</span>}
                 </div>
             </div>
         )
     }
 
-    return <div className="inner">
+    return <div className={`inner ${image.alt ? 'has-alt' : ''}`}>
         {processedImage}
         {skeletonImage}
+        {image.alt && <span>{image.alt}</span>}
     </div>
 }
 
