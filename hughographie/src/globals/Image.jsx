@@ -6,6 +6,7 @@ const Image = ({ image, className, containerClassName, hasContainerStyle = false
     const [runCleanup, setRunCleanup] = useState(false)
     const imageProps = processedImageUrl(image, aspectRatio);
     const processedImage = <img {...imageProps} className={`${className ?? ''} ${objectPosition ?? ''} ${aspectRatio ?? ''}`} alt={image.alt ?? ""} onLoad={() => setIsLoaded(true)} />
+    const skeletonImage = <div className={`skeleton-image ${isLoaded ? 'loaded' : ''} ${runCleanup ? 'cleanup' : ''} ${aspectRatio ?? ''}`} />
 
     useEffect(() => {
         if (isLoaded) {
@@ -28,16 +29,18 @@ const Image = ({ image, className, containerClassName, hasContainerStyle = false
                     position: 'relative'
                 } : null}
             >
-                {processedImage}
-                <div className={`skeleton-image ${isLoaded ? 'loaded' : ''} ${runCleanup ? 'cleanup' : ''}`} />
+                <div className="inner">
+                    {processedImage}
+                    {skeletonImage}
+                </div>
             </div>
         )
     }
 
-    return <>
+    return <div className="inner">
         {processedImage}
-        <div className={`skeleton-image ${isLoaded ? 'loaded' : ''} ${runCleanup ? 'cleanup' : ''}`} />
-    </>
+        {skeletonImage}
+    </div>
 }
 
 export default Image;

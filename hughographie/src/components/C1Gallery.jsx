@@ -1,4 +1,5 @@
 import Image from '../globals/Image';
+import Lightbox from "../globals/Lightbox";
 
 export default function C1Gallery({ fields = {} }) {
     return (
@@ -6,6 +7,7 @@ export default function C1Gallery({ fields = {} }) {
             {fields.title && <h2>{fields.title}</h2>}
             <div className={`grid ${fields.isMasonary ? 'masonary' : ''}`}>
                 {fields.images && fields.images.map((item, index) => (
+                    <Lightbox key={index}>
                         <Image
                             key={index}
                             image={item.image}
@@ -14,6 +16,7 @@ export default function C1Gallery({ fields = {} }) {
                             objectPosition={item.objectPosition}
                             aspectRatio={item.aspectRatio}
                         />
+                    </Lightbox>
                 ))}
             </div>
         </section>
