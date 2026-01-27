@@ -5,7 +5,8 @@ const Image = ({ image, className, containerClassName, hasContainerStyle = false
     const [isLoaded, setIsLoaded] = useState(false)
     const [runCleanup, setRunCleanup] = useState(false)
     const imageProps = processedImageUrl(image, aspectRatio);
-    const processedImage = <img {...imageProps} className={`${className ?? ''} ${objectPosition ?? ''} ${aspectRatio ?? ''}`} alt={image.alt ?? ""} onLoad={() => setIsLoaded(true)} />
+    const description = (image.alt || image.name) ?? ''
+    const processedImage = <img {...imageProps} className={`${className ?? ''} ${objectPosition ?? ''} ${aspectRatio ?? ''}`} alt={description} onLoad={() => setIsLoaded(true)} />
     const skeletonImage = <div className={`skeleton-image ${isLoaded ? 'loaded' : ''} ${runCleanup ? 'cleanup' : ''} ${aspectRatio ?? ''}`} />
 
     useEffect(() => {
@@ -29,19 +30,19 @@ const Image = ({ image, className, containerClassName, hasContainerStyle = false
                     position: 'relative'
                 } : null}
             >
-                <div className={`inner ${image.alt ? 'has-alt' : ''}`}>
+                <div className={`inner ${description ? 'has-alt' : ''}`}>
                     {processedImage}
                     {skeletonImage}
-                    {image.alt && <span>{image.alt}</span>}
+                    {description && <span>{description}</span>}
                 </div>
             </div>
         )
     }
 
-    return <div className={`inner ${image.alt ? 'has-alt' : ''}`}>
+    return <div className={`inner ${description ? 'has-alt' : ''}`}>
         {processedImage}
         {skeletonImage}
-        {image.alt && <span>{image.alt}</span>}
+        {description && <span>{description}</span>}
     </div>
 }
 
