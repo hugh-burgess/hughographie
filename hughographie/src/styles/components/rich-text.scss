@@ -4,10 +4,6 @@
     max-width: var(--desktop-container-max-width);
     padding: 0 var(--mobile-container-width-x);
 
-    @include tablet {
-        padding: 0 var(--desktop-container-width-x);
-    }
-
     @include desktop {
         padding: 0;
     }
