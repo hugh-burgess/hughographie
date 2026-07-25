@@ -88,10 +88,12 @@
     }
 
     &.has-alt:hover {
-        filter: brightness(0.7);
+        @include tablet {
+            filter: brightness(0.7);
 
-        span {
-            opacity: 1;
+            span {
+                opacity: 1;
+            }
         }
     }
 
