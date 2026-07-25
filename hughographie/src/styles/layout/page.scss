@@ -1,26 +1,10 @@
 @import "../base/media-queries.scss";
 
-.blog-page {
+.page {
+    padding: 0 var(--mobile-container-width-x);
 
-    .blog-info {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        max-width: var(--desktop-container-max-width);
-        padding: 0 var(--mobile-container-width-x) var(--mobile-container-width-x);
-
-        span {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-s);
-            align-items: center;
-            font-size: var(--font-size-caption);
-            opacity: 0.7;
-        }
-
-        @include desktop {
-            padding: 0 0 var(--mobile-container-width-x);
-        }
+    @include desktop {
+        padding: 0;
     }
 
     h1,
@@ -28,5 +12,35 @@
         margin-left: 0;
         padding-left: 0;
         text-transform: none;
+    }
+
+    &.blog-page {
+
+        .blog-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: var(--desktop-container-max-width);
+            padding: 0 var(--mobile-container-width-x) var(--mobile-container-width-x);
+
+            span {
+                display: flex;
+                flex-wrap: wrap;
+                gap: var(--spacing-s);
+                align-items: center;
+                font-size: var(--font-size-caption);
+                opacity: 0.7;
+            }
+
+            @include desktop {
+                padding: 0 0 var(--mobile-container-width-x);
+            }
+        }
+    }
+
+    &.project-page {
+        .has-alt:hover span {
+            display: none;
+        }
     }
 }

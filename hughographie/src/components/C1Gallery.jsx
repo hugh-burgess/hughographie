@@ -7,7 +7,7 @@ export default function C1Gallery({ fields = {} }) {
             {fields.title && <h2>{fields.title}</h2>}
             <div className={`grid ${fields.isMasonary ? 'masonary' : ''}`}>
                 {fields.images && fields.images.map((item, index) => (
-                    <Lightbox key={index}>
+                    <Lightbox key={index} hasLightbox={!!fields.hasLightbox}>
                         <Image
                             key={index}
                             image={item.image}

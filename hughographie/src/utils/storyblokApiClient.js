@@ -23,20 +23,27 @@ export async function getGlobals() {
     }
 }
 
-export async function getBlogs() {
+export async function getStories(storiesPrefix, pageType) {
     const storyblokApi = getStoryblokApi();
 
     try {
         const response = await storyblokApi.get('cdn/stories/', {
             version: 'draft',
-            starts_with: 'blog',
+            starts_with: storiesPrefix,
+        });
+        const stories = response.data.stories
+        
+        let resolvedStories = []
+        stories?.forEach(story => {
+            if (story.content.component !== pageType) return null
+            resolvedStories.push(story)
         });
 
         return {
-            blogs: response.data.stories,
+            stories: resolvedStories,
         };
     } catch (error) {
-        console.error('Error fetching blogs:', error);
+        console.error(`Error fetching ${storiesPrefix}:`, error);
         return null;
     }
 }

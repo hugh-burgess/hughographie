@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
-const Lightbox = ({ children }) => {
-    const location = useLocation()
+const Lightbox = ({ children, hasLightbox }) => {
     const [overlay, setOverlay] = useState(false)
     const [isMobile, setIsMobile] = useState(false)
 
@@ -16,7 +14,7 @@ const Lightbox = ({ children }) => {
         return () => window.removeEventListener('resize', checkMobile)
     }, [])
 
-    if (location.pathname !== "/gallery") return children
+    if (!hasLightbox) return children
 
     const Overlay = () => {
         return <div className="overlay">{children}</div>

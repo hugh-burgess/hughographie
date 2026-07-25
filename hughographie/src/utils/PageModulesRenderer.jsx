@@ -4,6 +4,8 @@ import C3ImageAndText from "../components/C3ImageAndText";
 import C4Video from "../components/C4Video";
 import C5Stage from "../components/C5Stage";
 import CTACard from "../components/C7CtaCard";
+import T1Blogs from "../teasers/Blog/T1Blogs";
+import T2Projects from "../teasers/Projects/T2Projects";
 
 export const PageModulesRenderer = ({ contentType, index, fields }) => {
   switch (contentType) {
@@ -19,6 +21,10 @@ export const PageModulesRenderer = ({ contentType, index, fields }) => {
       return <C5Stage key={index} blok={fields} />;
     case "CTA Card":
       return <CTACard key={index} blok={fields} />;
+    case "t1blogs":
+      return <T1Blogs key={index} blok={fields} />;
+    case "t2projects":
+      return <T2Projects key={index} blok={fields} />;
     default:
   }
 };

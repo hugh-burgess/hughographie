@@ -46,6 +46,11 @@ h3 {
 
 blockquote {
     font-style: italic;
+    margin: 0.5rem;
+
+    @include tablet {
+        margin: revert;
+    }
 }
 
 a,

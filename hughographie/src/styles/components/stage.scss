@@ -4,7 +4,6 @@
     position: relative;
     height: auto;
     overflow: hidden;
-    padding: 0 var(--mobile-container-width-x);
 
     .inner {
         inset: 0;
@@ -42,8 +41,6 @@
     }
 
     @include desktop {
-        padding: 0;
-
         .skeleton-image {
             width: 100%;
             transform: none;

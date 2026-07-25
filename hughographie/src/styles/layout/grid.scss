@@ -83,7 +83,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-m);
-    padding: 0 var(--mobile-container-width-x);
 
     @include mobile {
         grid-template-columns: 1fr;
@@ -98,7 +97,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    &.blog-teasers {
+    &.teasers {
         @include tablet {
             padding: 0 var(--mobile-container-width-x);
 
@@ -157,6 +156,14 @@
         outline: 3px solid var(--white);
         border-radius: var(--border-radius-default);
 
+        &.is-project-teaser a {
+            max-height: 200px;
+
+            .has-alt:hover span {
+                display: none;
+            }
+        }
+
         a {
             position: relative;
             width: 100%;
@@ -171,7 +178,6 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 100%;
             padding-bottom: var(--spacing-s);
             display: flex;
             flex-direction: column;

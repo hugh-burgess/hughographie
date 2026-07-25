@@ -7,7 +7,7 @@ const C5Stage = ({ blok }) => {
     return (
         <section className={`stage ${stageHeight}`}>
             {stageImage &&
-                <Lightbox key={stageImage.image._uid}>
+                <Lightbox key={stageImage.image._uid} hasLightbox={!!blok.hasLightbox}>
                     <Image
                         image={stageImage.image}
                         className="image"
