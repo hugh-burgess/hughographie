@@ -159,21 +159,31 @@
         outline: 3px solid var(--white);
         border-radius: var(--border-radius-default);
 
-        &.is-project-teaser a {
-            max-height: 200px;
-
-            .has-alt:hover span {
-                display: none;
-            }
-        }
-
         a {
             position: relative;
             width: 100%;
 
             img {
-                aspect-ratio: 4/3;
                 filter: none;
+            }
+        }
+
+        &.is-blog-teaser a img {
+            aspect-ratio: 4/3;
+        }
+
+        &.is-project-teaser a {
+            .has-alt:hover span {
+                display: none;
+            }
+
+            img {
+                @include mobile {
+                    aspect-ratio: 2/1;
+                }
+                @include tablet {
+                    aspect-ratio: 4/1;
+                }
             }
         }
 

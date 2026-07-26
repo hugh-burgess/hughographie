@@ -9,7 +9,7 @@ const T1Blog = ({ blog }) => {
     return (
         <div
             key={teaserImage._uid}
-            className="grid-item loaded teaser-card"
+            className="grid-item loaded teaser-card is-blog-teaser"
         >
             <Link to={`/${blog.full_slug}`}>
                  {teaserImage && <Image item={{image: teaserImage}} />}
