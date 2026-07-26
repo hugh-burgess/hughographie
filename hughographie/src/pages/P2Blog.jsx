@@ -14,7 +14,7 @@ export default function P2Blog({ blok }) {
     <div className="page blog-page">
       <BackToTop />
       <div className='blog-info'>
-        <Link className="blog-back" to="/blog/"><IoIosArrowRoundBack /></Link>
+        <Link className="back-link" to="/blog/"><IoIosArrowRoundBack /></Link>
         <span>
           {blok.date && <div>{formatDate(blok.date)}</div>}
           {blok.teaserGenre && <div>{blok.teaserGenre}</div>}
