@@ -2,7 +2,7 @@ import { PageModulesRenderer } from '../utils/PageModulesRenderer';
 import { Link } from 'react-router-dom';
 
 import { IoIosArrowRoundBack } from "react-icons/io";
-import BackToTop from '../globals/BackToTop';
+import BackToTop from '../elements/BackToTop';
 import formatDate from '../utils/formatDate';
 
 export default function P2Blog({ blok }) {

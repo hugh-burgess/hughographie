@@ -1,4 +1,4 @@
-import Image from "../globals/Image";
+import Image from "../elements/Image";
 
 const C4Video = ({ blok }) => {
     console.log('video blok', blok)

@@ -1,5 +1,5 @@
-import Image from "../globals/Image";
-import Lightbox from "../globals/Lightbox";
+import Image from "../elements/Image";
+import Lightbox from "../elements/Lightbox";
 
 const C5Stage = ({ blok }) => {
     const stageImage = blok.item[0]

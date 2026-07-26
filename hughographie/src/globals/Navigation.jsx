@@ -5,7 +5,7 @@ import { processMetaLinks } from '../utils/processMetaLinks';
 
 import { CiSun } from 'react-icons/ci';
 import { IoMoonOutline } from 'react-icons/io5';
-import Button from './Button';
+import Button from '../elements/Button';
 
 const Navigation = ({ blok, theme, footerItems, isMobile }) => {
     const [isOpen, setIsOpen] = useState(false);

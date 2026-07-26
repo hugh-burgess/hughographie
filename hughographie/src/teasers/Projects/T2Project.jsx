@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Image from "../../globals/Image"
+import Image from "../../elements/Image"
 
 const T2Project = ({ project }) => {
     const teaserHeadline = project.content.teaserHeadline

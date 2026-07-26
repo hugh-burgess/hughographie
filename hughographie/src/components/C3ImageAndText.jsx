@@ -1,4 +1,4 @@
-import Image from "../globals/Image";
+import Image from "../elements/Image";
 import C2RichText from "./C2RichText";
 
 const C3ImageAndText = ({ fields }) => {

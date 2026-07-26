@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
-import Button from "./Button";
+import Button from "../elements/Button";
 
 const BackToTop = () => {
 

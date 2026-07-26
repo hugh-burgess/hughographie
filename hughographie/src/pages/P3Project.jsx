@@ -1,5 +1,5 @@
 import { PageModulesRenderer } from '../utils/PageModulesRenderer';
-import BackToTop from '../globals/BackToTop';
+import BackToTop from '../elements/BackToTop';
 import { Link } from 'react-router-dom';
 import { IoIosArrowRoundBack } from 'react-icons/io';
 

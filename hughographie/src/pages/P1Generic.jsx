@@ -1,6 +1,6 @@
 import { PageModulesRenderer } from '../utils/PageModulesRenderer';
 
-import BackToTop from '../globals/BackToTop';
+import BackToTop from '../elements/BackToTop';
 
 export default function P1Generic({ blok }) {
   if (!blok || Object.keys(blok).length === 0) {
