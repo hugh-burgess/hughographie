@@ -33,7 +33,7 @@ const Image = ({ item, className, containerClassName, hasContainerStyle = false 
                     position: 'relative'
                 } : null}
             >
-                <div className={`inner ${hoverDescription ? 'has-alt' : ''}`}>
+                <div className={`image-inner ${hoverDescription ? 'has-alt' : ''}`}>
                     {processedImage}
                     {skeletonImage}
                     {hoverDescription && <span>{hoverDescription}</span>}
@@ -42,7 +42,7 @@ const Image = ({ item, className, containerClassName, hasContainerStyle = false 
         )
     }
 
-    return <div className={`inner ${hoverDescription ? 'has-alt' : ''}`}>
+    return <div className={`image-inner ${hoverDescription ? 'has-alt' : ''}`}>
         {processedImage}
         {skeletonImage}
         {hoverDescription && <span>{hoverDescription}</span>}
