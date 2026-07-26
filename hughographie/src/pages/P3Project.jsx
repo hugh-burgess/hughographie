@@ -11,7 +11,10 @@ export default function P3Project({ blok }) {
   return (
     <div className="page project-page">
       <BackToTop />
-      <Link className="back-link" to="/projects/"><IoIosArrowRoundBack /></Link>
+      <div className='info'>
+        <Link className="back-link" to="/projects/"><IoIosArrowRoundBack /></Link>
+          {blok.description && <span>{blok.description}</span>}
+      </div>
       {blok.modules?.map((nestedBlok, index) => (
         <PageModulesRenderer contentType={nestedBlok.component} key={index} fields={nestedBlok} />
       ))}

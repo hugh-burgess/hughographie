@@ -13,7 +13,7 @@ export default function P2Blog({ blok }) {
   return (
     <div className="page blog-page">
       <BackToTop />
-      <div className='blog-info'>
+      <div className='info'>
         <Link className="back-link" to="/blog/"><IoIosArrowRoundBack /></Link>
         <span>
           {blok.date && <div>{formatDate(blok.date)}</div>}
