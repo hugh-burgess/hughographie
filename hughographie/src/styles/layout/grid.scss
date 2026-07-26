@@ -2,7 +2,6 @@
 
 .image-and-text-grid {
     display: grid;
-    padding: 0 var(--mobile-container-width-x);
 
     .rich-text {
         padding: 0;
@@ -95,6 +94,10 @@
 
     @include desktopXL {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.is-projects-grid {
+        grid-template-columns: 1fr;
     }
 
     &.teasers {

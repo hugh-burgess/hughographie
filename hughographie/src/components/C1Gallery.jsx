@@ -10,11 +10,9 @@ export default function C1Gallery({ fields = {} }) {
                     <Lightbox key={index} hasLightbox={!!fields.hasLightbox}>
                         <Image
                             key={index}
-                            image={item.image}
+                            item={item}
                             containerClassName={`grid-item ${item.aspectRatio ? item.aspectRatio : 'portrait'}`}
                             hasContainerStyle
-                            objectPosition={item.objectPosition}
-                            aspectRatio={item.aspectRatio}
                         />
                     </Lightbox>
                 ))}

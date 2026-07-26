@@ -17,7 +17,7 @@ const T2Projects = ({ blok }) => {
     return (
         <section className='teasers'>
             {headline && <h2>{headline}</h2>}
-            <div className='grid'>
+            <div className='grid is-projects-grid'>
                 {projects?.map((project, index) => <T2Project key={index} project={project} />)}
             </div>
         </section>

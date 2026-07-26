@@ -19,6 +19,14 @@
         flex-direction: column;
         justify-content: center;
 
+        .has-alt:hover {
+            filter: none;
+
+            span {
+                display: none;
+            }
+        }
+
         &>* {
             max-width: 95%;
             max-height: 95%;

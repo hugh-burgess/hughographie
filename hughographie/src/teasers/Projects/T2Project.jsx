@@ -9,7 +9,7 @@ const T2Project = ({ project }) => {
         <div key={project._uid}
             className="grid-item loaded teaser-card is-project-teaser">
             <Link to={`/${project.full_slug}`}>
-                {teaserImage && <Image image={teaserImage} />}
+                {teaserImage && <Image item={{image: teaserImage}} />}
                 <div className="teaser-info">
                     {teaserHeadline && <h3>{teaserHeadline}</h3>}
                 </div>

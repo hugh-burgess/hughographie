@@ -8,16 +8,23 @@
     .inner {
         inset: 0;
         width: 100%;
-        height: auto;
         object-fit: cover;
     }
 
     &.full {
         aspect-ratio: 2/1;
+
+        .lightbox {
+            height: 100%;
+        }
     }
 
     &.half {
         aspect-ratio: 3/1;
+
+        .lightbox {
+            height: 100%;
+        }
     }
 
     .top {

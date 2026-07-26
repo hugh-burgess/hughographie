@@ -8,9 +8,7 @@ const C3ImageAndText = ({ fields }) => {
     const imageItem = image[0]
     return (
         <section className={`image-and-text-grid ${imageFirst ? '' : 'reverse'}`}>
-            {imageItem && <Image image={imageItem.image} containerClassName="image"
-                objectPosition={imageItem.objectPosition}
-                aspectRatio={imageItem.aspectRatio}
+            {imageItem && <Image item={imageItem} containerClassName="image"
             />}
             {availableText && <C2RichText className="text" content={content} />}
         </section>

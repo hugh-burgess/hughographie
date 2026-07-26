@@ -1,6 +1,7 @@
 import Image from "../globals/Image";
 
 const C4Video = ({ blok }) => {
+    console.log('video blok', blok)
     return <div className="video">
         {!!blok.source.id ? <video
             className="source"
@@ -9,7 +10,7 @@ const C4Video = ({ blok }) => {
             muted
             loop
             poster={blok.placeholder.filename}
-        /> : blok.placeholder.filename ? <Image image={blok.placeholder} className="placeholder" /> : null}
+        /> : blok.placeholder.filename ? <Image item={{ image: blok.placeholder }} className="placeholder" /> : null}
         {blok.caption && <caption>© {blok.caption}</caption>}
     </div>
 

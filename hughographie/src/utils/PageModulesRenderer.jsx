@@ -19,7 +19,7 @@ export const PageModulesRenderer = ({ contentType, index, fields }) => {
       return <C4Video key={index} blok={fields} />;
     case "Stage":
       return <C5Stage key={index} blok={fields} />;
-    case "CTA Card":
+    case "ctaCard":
       return <CTACard key={index} blok={fields} />;
     case "t1blogs":
       return <T1Blogs key={index} blok={fields} />;

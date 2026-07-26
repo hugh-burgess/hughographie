@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import processedImageUrl from "../utils/imageOptimization";
 
-const Image = ({ image, className, containerClassName, hasContainerStyle = false, objectPosition, aspectRatio }) => {
+const Image = ({ item, className, containerClassName, hasContainerStyle = false }) => {
     const [isLoaded, setIsLoaded] = useState(false)
     const [runCleanup, setRunCleanup] = useState(false)
-    const imageProps = processedImageUrl(image, aspectRatio);
-    const description = (image.alt || image.name) ?? ''
-    const processedImage = <img {...imageProps} className={`${className ?? ''} ${objectPosition ?? ''} ${aspectRatio ?? ''}`} alt={description} onLoad={() => setIsLoaded(true)} />
-    const skeletonImage = <div className={`skeleton-image ${isLoaded ? 'loaded' : ''} ${runCleanup ? 'cleanup' : ''} ${aspectRatio ?? ''}`} />
 
     useEffect(() => {
         if (isLoaded) {
@@ -17,7 +13,14 @@ const Image = ({ image, className, containerClassName, hasContainerStyle = false
         }
     }, [isLoaded])
 
+    const image = item.image
     if (!image.filename) return null
+
+    const imageProps = processedImageUrl(image, item.aspectRatio);
+    const hoverDescription = item.hoverDescription
+    const processedImage = <img {...imageProps} className={`${className ?? ''} ${item.objectPosition ?? ''} ${item.aspectRatio ?? ''}`} alt={image.alt || image.name} onLoad={() => setIsLoaded(true)} />
+    const skeletonImage = <div className={`skeleton-image ${isLoaded ? 'loaded' : ''} ${runCleanup ? 'cleanup' : ''} ${item.aspectRatio ?? ''}`} />
+
 
     if (containerClassName) {
         return (
@@ -30,19 +33,19 @@ const Image = ({ image, className, containerClassName, hasContainerStyle = false
                     position: 'relative'
                 } : null}
             >
-                <div className={`inner ${description ? 'has-alt' : ''}`}>
+                <div className={`inner ${hoverDescription ? 'has-alt' : ''}`}>
                     {processedImage}
                     {skeletonImage}
-                    {description && <span>{description}</span>}
+                    {hoverDescription && <span>{hoverDescription}</span>}
                 </div>
             </div>
         )
     }
 
-    return <div className={`inner ${description ? 'has-alt' : ''}`}>
+    return <div className={`inner ${hoverDescription ? 'has-alt' : ''}`}>
         {processedImage}
         {skeletonImage}
-        {description && <span>{description}</span>}
+        {hoverDescription && <span>{hoverDescription}</span>}
     </div>
 }
 

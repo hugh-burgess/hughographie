@@ -12,7 +12,7 @@ const T1Blog = ({ blog }) => {
             className="grid-item loaded teaser-card"
         >
             <Link to={`/${blog.full_slug}`}>
-                {teaserImage && <Image image={teaserImage} />}
+                 {teaserImage && <Image item={{image: teaserImage}} />}
                 <div className="teaser-info">
                     <span className='date-genre'>
                         {blog.content.date && <div>{formatDate(blog.content.date)}</div>}

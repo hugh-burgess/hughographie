@@ -9,10 +9,8 @@ const C5Stage = ({ blok }) => {
             {stageImage &&
                 <Lightbox key={stageImage.image._uid} hasLightbox={!!blok.hasLightbox}>
                     <Image
-                        image={stageImage.image}
+                        item={stageImage}
                         className="image"
-                        objectPosition={stageImage.objectPosition}
-                        aspectRatio={stageHeight}
                     />
                 </Lightbox>
             }
