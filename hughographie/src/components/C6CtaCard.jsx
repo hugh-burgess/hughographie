@@ -1,7 +1,7 @@
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-const CTACard = ({ blok }) => {
+const C6CtaCard = ({ blok }) => {
     if (!blok.link.cached_url) return null
 
     function handleClick() {
@@ -26,4 +26,4 @@ const CTACard = ({ blok }) => {
         </section>
     )
 }
-export default CTACard;
+export default C6CtaCard;

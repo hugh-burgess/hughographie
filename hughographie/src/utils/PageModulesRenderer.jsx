@@ -3,7 +3,7 @@ import C2RichText from "../components/C2RichText";
 import C3ImageAndText from "../components/C3ImageAndText";
 import C4Video from "../components/C4Video";
 import C5Stage from "../components/C5Stage";
-import CTACard from "../components/C7CtaCard";
+import C6CtaCard from "../components/C6CtaCard";
 import T1Blogs from "../teasers/Blog/T1Blogs";
 import T2Projects from "../teasers/Projects/T2Projects";
 
@@ -20,7 +20,7 @@ export const PageModulesRenderer = ({ contentType, index, fields }) => {
     case "Stage":
       return <C5Stage key={index} blok={fields} />;
     case "ctaCard":
-      return <CTACard key={index} blok={fields} />;
+      return <C6CtaCard key={index} blok={fields} />;
     case "t1blogs":
       return <T1Blogs key={index} blok={fields} />;
     case "t2projects":
