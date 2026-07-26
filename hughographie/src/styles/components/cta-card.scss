@@ -10,16 +10,26 @@
         align-items: center;
         padding: calc(var(--mobile-container-width-x) / 2)var(--mobile-container-width-x);
 
-        p {
+        span {
             margin: 0;
-            text-align: center;
         }
 
         .link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-s);
+
             .arrow {
                 rotate: 180deg;
                 font-size: var(--font-size-caption);
                 transition: all 0.5s ease-in-out;
+            }
+
+
+            &:hover .arrow {
+                @include tablet {
+                    transform: translateX(calc(var(--spacing-s) * -1))
+                }
             }
         }
 

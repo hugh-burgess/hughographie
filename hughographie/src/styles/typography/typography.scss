@@ -61,7 +61,7 @@ span {
     text-decoration: none;
     transition: opacity 0.2s ease;
 
-    &.blog-back {
+    &.back-link {
         height: 1em;
         font-size: var(--font-size-xl);
         transform: translateX(-6px);
@@ -101,7 +101,7 @@ a.inverse.active {
     a {
         font-size: var(--font-size-body);
 
-        .blog-back {
+        .back-link {
             transform: translateX(-9px);
         }
     }
@@ -112,7 +112,7 @@ a.inverse.active {
         font-size: var(--font-size-caption);
     }
 
-    a:not(.teaser-card a):not(.blog-back):not(.logo):not(.active)::after {
+    a:not(.teaser-card a):not(.back-link):not(.logo):not(.active)::after {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -139,7 +139,7 @@ a.inverse.active {
 
 @include desktop {
     a {
-        &.blog-back {
+        &.back-link {
             padding-left: 0;
         }
     }

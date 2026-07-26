@@ -17,7 +17,7 @@ const CTACard = ({ blok }) => {
         <section className={`cta-card ${blok.variant ?? ''}`}>
             <Link to={`/${blok.link.cached_url}`} onClick={() => handleClick()}>
                 <div className="inner">
-                    {blok.text && <p>{blok.text}</p>}
+                    {blok.text && <span>{blok.text}</span>}
                     <div className="link">
                         {blok.label || 'Read More'} <IoIosArrowRoundBack className="arrow" />
                     </div>
