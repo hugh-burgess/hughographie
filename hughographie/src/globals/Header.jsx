@@ -14,7 +14,7 @@ export default function Header({ blok, theme, isMobile, footerItems }) {
     return (
         <header className={theme}>
             <Link to="/" className="logo">{blok.title || 'Logo'}</Link>
-            {!isMobile && (<ul>
+            <ul className='desktop-nav'>
                 <li className="desktop-darkmode-toggle" onClick={() => toggleDarkMode()}>{theme === 'dark' ? <CiSun /> : <IoMoonOutline />}</li>
                 {blok.nav?.map((item) => (
                     item.title && (<li key={item._uid}>
@@ -22,7 +22,7 @@ export default function Header({ blok, theme, isMobile, footerItems }) {
                             className={({ isActive }) => isActive ? "active" : ""}>
                             {item.title}</NavLink>
                     </li>)))}
-            </ul>)}
+            </ul>
             <Navigation blok={blok} theme={theme} footerItems={footerItems} isMobile={isMobile} />
         </header>
     );

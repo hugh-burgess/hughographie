@@ -37,7 +37,6 @@ header {
   z-index: 1000;
   display: flex;
   align-items: stretch;
-  gap: var(--spacing-s);
   margin: var(--mobile-container-width-x) var(--mobile-container-width-x) var(--mobile-container-width-x);
   transition: all 0.5s ease-in-out;
 
@@ -70,15 +69,14 @@ header {
     text-align: center;
   }
 
-  ul {
-    display: flex;
-    gap: var(--spacing-m);
-    margin: 0;
-    padding: var(--spacing-xs) 0;
-    flex-direction: column;
-    align-items: center;
+  ul.desktop-nav {
+    display: none;
 
     @include tablet {
+      display: flex;
+      gap: var(--spacing-m);
+      margin: 0;
+      align-items: center;
       flex-direction: row;
     }
 
