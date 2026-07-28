@@ -1,7 +1,7 @@
-const { wait } = require("@testing-library/user-event/dist/utils");
 const fs = require("fs");
 const path = require("path");
-require('dotenv').config()
+const sharp = require("sharp");
+require("dotenv").config();
 
 const IMAGE_DIR = path.join(__dirname, "../public/assets/images");
 
@@ -11,6 +11,7 @@ if (!fs.existsSync(IMAGE_DIR)) {
     fs.mkdirSync(IMAGE_DIR, { recursive: true });
 }
 
+const SIZES = [500, 800, 1200, 1500];
 
 async function getStories() {
     const response = await fetch(
@@ -18,10 +19,8 @@ async function getStories() {
     );
 
     const data = await response.json();
-
     return data.stories;
 }
-
 
 function findImages(obj, images = []) {
     if (!obj || typeof obj !== "object") return images;
@@ -43,31 +42,49 @@ function findImages(obj, images = []) {
     return images;
 }
 
-
 async function downloadImage(url) {
     const filename = path.basename(url.split("?")[0]);
-    const destination = path.join(IMAGE_DIR, filename);
 
-    if (fs.existsSync(destination)) {
-        console.log(`Skipping ${filename}: already exists in asset folder.`);
+    const ext = path.extname(filename);
+    const base = path.basename(filename, ext);
+
+    // We'll use the 1200px version as the "already processed" check.
+    const checkFile = path.join(IMAGE_DIR, `${base}-1200${ext}`);
+
+    if (fs.existsSync(checkFile)) {
+        console.log(`Skipping ${filename}: already processed.`);
         return;
     }
 
     const response = await fetch(url);
-    const buffer = await response.arrayBuffer();
+    const buffer = Buffer.from(await response.arrayBuffer());
 
-    fs.writeFileSync(destination, Buffer.from(buffer));
+    // Optional: save the original as well
+    fs.writeFileSync(path.join(IMAGE_DIR, filename), buffer);
 
-    console.log(`Downloaded ${filename}`);
+    for (const width of SIZES) {
+        const output = path.join(
+            IMAGE_DIR,
+            `${base}-${width}${ext}`
+        );
+
+        await sharp(buffer)
+            .resize({
+                width,
+                withoutEnlargement: true,
+            })
+            .toFile(output);
+
+        console.log(`Created ${base}-${width}${ext}`);
+    }
 }
-
 
 async function run() {
     const stories = await getStories();
 
     const images = [];
 
-    stories?.forEach(story => {
+    stories.forEach((story) => {
         findImages(story, images);
     });
 
@@ -75,14 +92,11 @@ async function run() {
 
     console.log(`Found ${uniqueImages.length} images`);
 
-    wait()
-
     for (const image of uniqueImages) {
         await downloadImage(image);
     }
 
-
+    console.log("Done.");
 }
-
 
 run();
