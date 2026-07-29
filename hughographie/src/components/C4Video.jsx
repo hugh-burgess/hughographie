@@ -1,7 +1,6 @@
 import Image from "../elements/Image";
 
 const C4Video = ({ blok }) => {
-    console.log('video blok', blok)
     return <div className="video">
         {!!blok.source.id ? <video
             className="source"

@@ -18,11 +18,27 @@ const C2RichText = ({ content, className }) => {
                         </p>
                     );
 
-                case 'text':
-                    return <span key={key}>{item.text}</span>;
+                case 'text': {
+                    let content = item.text;
 
-                case 'hard_break':
-                    return <br key={key} />;
+                    item.marks?.forEach((mark) => {
+                        switch (mark.type) {
+                            case 'italic':
+                                content = <i key={`${key}-italic`}>{content}</i>;
+                                break;
+                            case 'bold':
+                                content = <strong key={`${key}-bold`}>{content}</strong>;
+                                break;
+                            case 'link':
+                                content = <a target={mark.attrs.target} href={mark.attrs.href} key={`${key}-link`}>{content}</a>;
+                                break;
+                            default:
+                                break;
+                        }
+                    });
+
+                    return content;
+                }
 
                 case 'heading':
                     const HeadingTag = `h${item.attrs?.level || 2}`;
@@ -32,36 +48,12 @@ const C2RichText = ({ content, className }) => {
                         </HeadingTag>
                     );
 
-                case 'bullet_list':
-                    return (
-                        <ul key={key}>
-                            {item.content ? renderContent(item.content, key) : null}
-                        </ul>
-                    );
-
-                case 'ordered_list':
-                    return (
-                        <ol key={key}>
-                            {item.content ? renderContent(item.content, key) : null}
-                        </ol>
-                    );
-
-                case 'list_item':
-                    return (
-                        <li key={key}>
-                            {item.content ? renderContent(item.content, key) : null}
-                        </li>
-                    );
-
                 case 'blockquote':
                     return (
                         <blockquote key={key}>
                             {item.content ? renderContent(item.content, key) : null}
                         </blockquote>
                     );
-
-                case 'horizontal_rule':
-                    return <hr key={key} />;
 
                 default:
                     return null;
