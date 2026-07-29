@@ -1,0 +1,8 @@
+.f1-filter {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    margin-bottom: var(--spacing-s);
+    flex-wrap: wrap;
+    min-height: 45px;
+}

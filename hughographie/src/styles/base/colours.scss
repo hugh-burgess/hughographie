@@ -11,6 +11,9 @@
 .dark {
   background: var(--black);
 
+  & * {
+    color: var(--white);
+  }
 
   .back-to-top {
     background: var(--white);
@@ -24,13 +27,23 @@
     border: var(--border-radius-tiny) solid var(--white);
   }
 
-  & * {
-    color: var(--white);
+  button {
+    background: var(--black);
+    border: 1px solid var(--white);
+
+    &.is-active {
+      background: var(--white);
+      color: var(--black);
+    }
   }
 }
 
 .light {
   background: var(--white);
+
+  & * {
+    color: var(--black);
+  }
 
 
   .back-to-top {
@@ -46,8 +59,14 @@
     border: var(--border-radius-tiny) solid var(--rgba-light-black);
   }
 
-  & * {
-    color: var(--black);
+  button {
+    background: var(--white);
+    border: 1px solid var(--black);
+
+    &.is-active {
+      background: var(--black);
+      color: var(--white);
+    }
   }
 }
 
