@@ -10,12 +10,6 @@
 
     .burger-toggle {
         display: none;
-        flex-direction: column;
-        background: none;
-        border: none;
-        padding: 0 0.5rem;
-        gap: 6px;
-        z-index: 1001;
     }
 
     .burger-toggle span {
@@ -41,6 +35,13 @@
     .burger-toggle {
         display: flex;
         position: relative;
+        outline: none;
+         flex-direction: column;
+        background: none;
+        border: none;
+        padding: 0 0.5rem;
+        gap: 6px;
+        z-index: 1001;
     }
 
     .nav-menu {
