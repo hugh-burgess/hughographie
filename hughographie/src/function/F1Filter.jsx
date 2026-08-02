@@ -18,14 +18,14 @@ const F1Filter = ({ arrayToFilter, filterTarget, children }) => {
     const Filters = ({ className }) => {
         return (
             <>
-                <Button onClick={() => setActiveFilter(null)} className={`${className} ${activeFilter === null ? 'is-active' : ''}`}>
+                <Button onClick={() => setActiveFilter(null)} className={`${className ? className : ''} ${activeFilter === null ? 'is-active' : ''}`}>
                     All
                 </Button>
                 {filters.map((filter, index) => (
                     <Button
                         key={filter}
                         onClick={() => setActiveFilter(filter)}
-                        className={`${className} ${activeFilter === filter ? 'is-active' : ''}`}
+                        className={`${className ? className : ''} ${activeFilter === filter ? 'is-active' : ''}`}
                     >
                         {filter}
                     </Button>

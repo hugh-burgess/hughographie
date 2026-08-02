@@ -1,16 +1,11 @@
 import { StoryblokComponent } from '@storyblok/react';
 import { useEffect, useState } from 'react';
 import { getGlobals } from './utils/storyblokApiClient';
-import useDarkMode from './hooks/useDarkMode';
 
 export default function Layout({ children }) {
     const [globals, setGlobals] = useState(null);
     const [loading, setLoading] = useState(true);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-    const { isDarkMode } = useDarkMode()
-
-    const theme = isDarkMode ? 'dark' : 'light'
 
     useEffect(() => {
         const fetchGlobals = async () => {
@@ -32,14 +27,6 @@ export default function Layout({ children }) {
         };
     }, []);
 
-    useEffect(() => {
-        if (theme === 'dark') {
-            document.body.classList.add('dark')
-        } else {
-            document.body.classList.remove('dark')
-        }
-    }, [theme])
-
     if (loading) {
         return children;
     }
@@ -48,11 +35,11 @@ export default function Layout({ children }) {
 
     return (
         <>
-            {globals && globals.header?.content && <StoryblokComponent blok={globals.header.content} theme={theme} key={0} isMobile={isMobile} footerItems={mobileFooterNavItems} />}
-            <main className={theme}>
+            {globals && globals.header?.content && <StoryblokComponent blok={globals.header.content} key={0} isMobile={isMobile} footerItems={mobileFooterNavItems} />}
+            <main>
                 {children}
             </main>
-            {globals && globals.footer?.content && <StoryblokComponent blok={globals.footer.content} theme={theme} key={1} isMobile={isMobile} />}
+            {globals && globals.footer?.content && <StoryblokComponent blok={globals.footer.content} key={1} isMobile={isMobile} />}
         </>
     );
 }

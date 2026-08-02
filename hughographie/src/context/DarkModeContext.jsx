@@ -17,9 +17,11 @@ export const DarkModeProvider = ({ children }) => {
     localStorage.setItem('darkMode', JSON.stringify(isDarkMode))
     // Update document class or attribute
     if (isDarkMode) {
-      document.documentElement.classList.add('dark-mode')
+      document.documentElement.classList.add('dark')
+      document.documentElement.classList.remove('light')
     } else {
-      document.documentElement.classList.remove('dark-mode')
+      document.documentElement.classList.add('light')
+      document.documentElement.classList.remove('dark')
     }
   }, [isDarkMode])
 

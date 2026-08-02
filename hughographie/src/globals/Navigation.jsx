@@ -7,9 +7,11 @@ import { CiSun } from 'react-icons/ci';
 import { IoMoonOutline } from 'react-icons/io5';
 import Button from '../elements/Button';
 
-const Navigation = ({ blok, theme, footerItems, isMobile }) => {
+const Navigation = ({ blok, footerItems, isMobile }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const { toggleDarkMode } = useDarkMode()
+    const { toggleDarkMode, isDarkMode } = useDarkMode()
+    const themeToIcon = !isDarkMode ? <CiSun /> : <IoMoonOutline />
+
 
     // Prevent scrolling when menu is open
     useEffect(() => {
@@ -35,7 +37,7 @@ const Navigation = ({ blok, theme, footerItems, isMobile }) => {
     };
 
     return (
-        <nav className={`navigation ${theme}`}>
+        <nav className="navigation">
             <Button
                 className={`burger-toggle ${isOpen ? 'open' : ''}`}
                 onClick={toggleMenu}
@@ -47,7 +49,7 @@ const Navigation = ({ blok, theme, footerItems, isMobile }) => {
 
             <div className={`nav-menu ${isOpen ? 'open' : ''}`}>
                 <ul>
-                    <li className="mobile-darkmode-toggle" onClick={() => toggleDarkMode()}>{theme === 'dark' ? <CiSun /> : <IoMoonOutline />}</li>
+                    <li className="mobile-darkmode-toggle" onClick={() => toggleDarkMode()}>{themeToIcon ?? <CiSun />}</li>
                     <NavLink to="/" onClick={closeMenu}>Home</NavLink>
                     {blok?.nav?.map((item) => (
                         item.title && (

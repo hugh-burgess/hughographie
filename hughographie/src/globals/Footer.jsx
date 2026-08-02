@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import { processMetaLinks } from '../utils/processMetaLinks';
 
-export default function Footer({ blok, theme, isMobile }) {
+export default function Footer({ blok, isMobile }) {
 
     if (!blok || Object.keys(blok).length === 0) {
         return <footer><p>Footer (No data)</p></footer>;
     }
 
     return (
-        <footer className={theme}>
+        <footer>
             <div className='meta-links'>
                 {blok.metaLinks && blok.metaLinks.map((meta, index) => processMetaLinks(meta, index, isMobile, false))}
             </div>

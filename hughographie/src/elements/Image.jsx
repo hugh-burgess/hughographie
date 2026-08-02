@@ -16,14 +16,7 @@ const Image = ({ item, className, containerClassName, hasContainerStyle = false 
     const image = item.image
     if (!image.filename) return null
 
-    const isLocal = process.env.NODE_ENV === 'development'
-
-    const mockImage = {
-        loading: "lazy",
-        src: "https://placehold.co/500x500?text=Image"
-    }
-
-    const imageProps = isLocal ? mockImage : processedImageUrl(image, item.aspectRatio);
+    const imageProps = processedImageUrl(image, item.aspectRatio);
     const hoverDescription = item.hoverDescription
     const processedImage = <img
         {...imageProps}

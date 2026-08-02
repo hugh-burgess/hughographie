@@ -21,13 +21,21 @@
         background: var(--black);
         outline: 1px solid var(--white);
 
-        &.mobile-filter-button.active, &.is-active {
+        &.mobile-filter-button.active,
+        &.is-active {
             background: var(--white);
             color: var(--black);
         }
 
         &:focus-visible {
             outline: 2px solid var(--white);
+        }
+    }
+
+    .navigation {
+        .nav-menu {
+            background: var(--black);
+            color: var(--white)
         }
     }
 }
@@ -57,13 +65,21 @@
         background: var(--white);
         outline: 1px solid var(--black);
 
-        &.mobile-filter-button.active, &.is-active {
+        &.mobile-filter-button.active,
+        &.is-active {
             background: var(--black);
             color: var(--white);
         }
 
         &:focus-visible {
             outline: 2px solid var(--black);
+        }
+    }
+
+    .navigation {
+        .nav-menu {
+            background: var(--white);
+            color: var(--black)
         }
     }
 }
