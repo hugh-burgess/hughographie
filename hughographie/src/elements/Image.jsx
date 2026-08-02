@@ -25,7 +25,18 @@ const Image = ({ item, className, containerClassName, hasContainerStyle = false 
 
     const imageProps = isLocal ? mockImage : processedImageUrl(image, item.aspectRatio);
     const hoverDescription = item.hoverDescription
-    const processedImage = <img {...imageProps} className={`${className ?? ''} ${item.objectPosition ?? ''} ${item.aspectRatio ?? ''}`} alt={image.alt || image.name} onLoad={() => setIsLoaded(true)} />
+    const processedImage = <img
+        {...imageProps}
+        src={imageProps.src}
+        srcSet={imageProps.srcSet}
+        sizes={imageProps.sizes}
+        onError={(e) => {
+            e.currentTarget.src = imageProps.fallbackSrc;
+        }}
+        className={`${className ?? ''} ${item.objectPosition ?? ''} ${item.aspectRatio ?? ''}`}
+        alt={image.alt || image.name}
+        onLoad={() => setIsLoaded(true)}
+    />
     const skeletonImage = <div className={`skeleton-image ${isLoaded ? 'loaded' : ''} ${runCleanup ? 'cleanup' : ''} ${item.aspectRatio ?? ''}`} />
 
 
