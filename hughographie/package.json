@@ -19,9 +19,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "download-images": "node scripts/downloadImages.js",
+    "download:images": "node scripts/downloadImages.js",
     "start": "react-scripts start",
-    "build": "pnpm download-images && react-scripts build",
+    "build": "pnpm download:images && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
