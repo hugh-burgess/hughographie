@@ -21,7 +21,7 @@
         background: var(--black);
         outline: 1px solid var(--white);
 
-        &.is-active {
+        &.mobile-filter-button.active, &.is-active {
             background: var(--white);
             color: var(--black);
         }
@@ -57,7 +57,7 @@
         background: var(--white);
         outline: 1px solid var(--black);
 
-        &.is-active {
+        &.mobile-filter-button.active, &.is-active {
             background: var(--black);
             color: var(--white);
         }
