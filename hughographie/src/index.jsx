@@ -9,6 +9,7 @@ import './styles';
 import P1Generic from './pages/P1Generic';
 import P2Blog from './pages/P2Blog';
 import P3Project from './pages/P3Project';
+import P4Contact from './pages/P4Contact';
 
 import Header from './globals/Header';
 import Footer from './globals/Footer';
@@ -22,6 +23,7 @@ storyblokInit({
     P1Generic,
     P2Blog,
     P3Project,
+    P4Contact,
     Header,
     Footer,
   },
