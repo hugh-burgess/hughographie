@@ -38,6 +38,15 @@
             color: var(--white)
         }
     }
+
+    .contact-form input, .contact-form textarea {
+        border: 1px solid var(--white);
+
+        &::placeholder {
+            color: var(--white);
+            opacity: 0.4;
+        }
+    }
 }
 
 .light {
@@ -78,8 +87,17 @@
 
     .navigation {
         .nav-menu {
-            background: var(--white);
+            background: var(--black);
             color: var(--black)
+        }
+    }
+
+        .contact-form input, .contact-form textarea {
+        border: 1px solid var(--black);
+
+        &::placeholder {
+            color: var(--white);
+            opacity: 0.4;
         }
     }
 }

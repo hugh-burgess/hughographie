@@ -19,6 +19,12 @@
         display: flex;
         flex-direction: column;
         gap: var(--spacing-xs);
+
+        &.error input,
+        &.error textarea {
+            border-color: var(--error);
+            border: 2px solid var(--error);
+        }
     }
 
     label {
@@ -31,30 +37,14 @@
     input,
     textarea {
         padding: 0.9rem 1rem;
+        outline: none;
+        box-shadow: none;
+        resize: none;
 
-        border: 1px solid var(--black);
         border-radius: var(--border-radius-default);
-
-        background: transparent;
-        color: var(--black);
+        background-color: transparent;
 
         font: inherit;
-
-        outline: none;
-
-        transition:
-            background-color 0.2s ease,
-            box-shadow 0.2s ease;
-
-        &::placeholder {
-            color: var(--black);
-            opacity: 0.4;
-        }
-
-        &:focus {
-            background: var(--white);
-            box-shadow: 4px 4px 0 var(--black);
-        }
     }
 
     textarea {
@@ -65,35 +55,28 @@
 
     .form-submit {
         align-self: flex-start;
+    }
+}
 
-        min-height: 48px;
-        padding: 0.8rem 1.5rem;
+.success-message {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-m);
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: var(--spacing-l);
+    text-align: center;
+    justify-content: center;
 
-        border: 1px solid var(--black);
+    @include tablet {
+        flex-direction: row;
+    }
 
-        background: var(--black);
-        color: var(--white);
-
-        font: inherit;
-        font-weight: 500;
-
-        cursor: pointer;
-
-        transition:
-            background-color 0.2s ease,
-            color 0.2s ease,
-            box-shadow 0.2s ease,
-            transform 0.2s ease;
-
-        &:hover {
-            background: transparent;
-            color: var(--black);
-            box-shadow: 4px 4px 0 var(--black);
-        }
-
-        &:active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 var(--black);
-        }
+    .tick {
+        color: #4caf50;
+        font-size: 1.5rem;
+        font-weight: bold;
     }
 }
