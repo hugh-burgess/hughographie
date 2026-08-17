@@ -1,5 +1,4 @@
 import { useState } from "react";
-import sendEmail from "../utils/resend";
 
 export default function P4Contact({ blok }) {
   const [status, setStatus] = useState("");
@@ -28,7 +27,11 @@ export default function P4Contact({ blok }) {
 
     setStatus("Sending...");
     try {
-      await sendEmail(form);
+      fetch('/api/server', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sender: form.sender, subject: form.subject, message: form.message })
+      });
 
       setStatus("Email sent successfully.");
 

@@ -1,14 +1,10 @@
-const express = require('express');
-const path = require('path');
 const { Resend } = require('resend');
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const app = express();
-const port = process.env.PORT || 3001;
+module.exports = async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
-app.use(express.json());
-
-app.post('/api/send-email', async (req, res) => {
   try {
     const { sender, subject, message } = req.body || {};
 
@@ -18,7 +14,7 @@ app.post('/api/send-email', async (req, res) => {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const emailPayload = {
+    const result = await resend.emails.send({
       from: process.env.RESEND_FROM || 'onboarding@resend.dev',
       to: process.env.RESEND_TO || 'hughburgessgermany@hotmail.com',
       replyTo: sender,
@@ -28,9 +24,7 @@ app.post('/api/send-email', async (req, res) => {
         <hr>
         <p>${String(message).replace(/\n/g, '<br>')}</p>
       `,
-    };
-
-    const result = await resend.emails.send(emailPayload);
+    });
 
     if (result?.error) {
       throw new Error(result.error.message || 'Unable to send email.');
@@ -41,8 +35,4 @@ app.post('/api/send-email', async (req, res) => {
     console.error('Email send failed:', error);
     return res.status(500).json({ error: error.message || 'Failed to send email.' });
   }
-});
-
-app.listen(port, () => {
-  console.log(`Email API listening on http://localhost:${port}`);
-});
+};
