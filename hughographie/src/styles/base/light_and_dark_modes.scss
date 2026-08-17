@@ -40,7 +40,7 @@
     }
 
     .contact-form input, .contact-form textarea {
-        border: 1px solid var(--white);
+        outline: 1px solid var(--white);
 
         &::placeholder {
             color: var(--white);
@@ -93,7 +93,7 @@
     }
 
         .contact-form input, .contact-form textarea {
-        border: 1px solid var(--black);
+        outline: 1px solid var(--black);
 
         &::placeholder {
             color: var(--white);

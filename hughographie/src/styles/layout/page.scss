@@ -48,5 +48,23 @@
 
     &.contact-page {
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-s);
+
+        @include tablet {
+            flex-direction: row;
+            align-items: start;
+            gap: var(--spacing-m);
+
+            .content {
+                flex: 1;
+            }
+        }
+
+        .rich-text {
+            width: 100%;
+        }
     }
 }

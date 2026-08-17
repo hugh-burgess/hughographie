@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MdOutlineDoneOutline } from "react-icons/md";
+import C2RichText from "../components/C2RichText"
 
 export default function P4Contact({ blok }) {
   const [status, setStatus] = useState("");
@@ -20,7 +21,7 @@ export default function P4Contact({ blok }) {
     return (
       <div className="page contact-page">
         <div className="success-message">
-          <MdOutlineDoneOutline className="tick"/> <p>Thank you for getting in touch!</p>
+          <MdOutlineDoneOutline className="tick" /> <p>Thank you for getting in touch!</p>
         </div>
       </div>
     );
@@ -41,6 +42,7 @@ export default function P4Contact({ blok }) {
         [name]: false,
       }));
     }
+    setStatus("");
   };
 
   const handleSubmit = async (e) => {
@@ -57,6 +59,7 @@ export default function P4Contact({ blok }) {
     if (!form.message.trim()) {
       newErrors.message = true;
     }
+    setStatus("Please fill in the required fields.");
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -91,33 +94,35 @@ export default function P4Contact({ blok }) {
 
   return (
     <div className="page contact-page">
+      <div className="content">
+        {blok.headline && <h1>{blok.headline}</h1>}
+        {blok.intro && <C2RichText content={blok.intro} />}
+      </div>
       <form onSubmit={handleSubmit} className="contact-form">
-        <div className="form-row">
-          <div className={`form-field ${errors.sender ? 'error' : ''}`}>
-            <label htmlFor="sender">Email</label>
-            <input
-              id="sender"
-              name="sender"
-              type="email"
-              value={form.sender}
-              onChange={handleChange}
-            />
-          </div>
+        <div className={`form-field ${errors.sender ? 'error' : ''}`}>
+          <label htmlFor="sender">{blok.emailHeadline}</label>
+          <input
+            id="sender"
+            name="sender"
+            type="email"
+            value={form.sender}
+            onChange={handleChange}
+          />
+        </div>
 
-          <div className={`form-field ${errors.subject ? 'error' : ''}`}>
-            <label htmlFor="subject">Subject</label>
-            <input
-              id="subject"
-              name="subject"
-              type="text"
-              value={form.subject}
-              onChange={handleChange}
-            />
-          </div>
+        <div className={`form-field ${errors.subject ? 'error' : ''}`}>
+          <label htmlFor="subject">{blok.subjectHeadline}</label>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            value={form.subject}
+            onChange={handleChange}
+          />
         </div>
 
         <div className={`form-field ${errors.message ? 'error' : ''}`}>
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">{blok.messageHeadline}</label>
           <textarea
             id="message"
             name="message"
@@ -131,7 +136,7 @@ export default function P4Contact({ blok }) {
           {blok.buttonLabel}
         </button>
 
-        {status && <p>{status}</p>}
+        {status && <p className={`status ${errors.subject ? 'error' : ''}`}>{status}</p>}
       </form>
     </div>
   );
