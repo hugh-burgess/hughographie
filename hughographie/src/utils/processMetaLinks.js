@@ -1,11 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import { FaGithub } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
-import { RiInstagramFill } from "react-icons/ri";
-
 export function processMetaLinks(metaItems, index, isMobile, isNavigation) {
-    const metaLinkLogos = [<FaGithub />, <IoMdMail />, <RiInstagramFill />];        
     const checkForEmailInLink = (link) => {
         switch (link.linktype) {
             case 'email':
@@ -16,12 +11,11 @@ export function processMetaLinks(metaItems, index, isMobile, isNavigation) {
     };
 
     const processMetaLinks = (meta, index) => {
-        const title = isNavigation || !isMobile ? metaLinkLogos[index] : meta.title
         if (meta.link.linktype === 'story') {
             return <NavLink
                 key={index}
                 to={meta.link?.cached_url || '#'}>
-                {title}
+                {meta.title}
             </NavLink>
         } else
             return <a
@@ -29,7 +23,7 @@ export function processMetaLinks(metaItems, index, isMobile, isNavigation) {
                 href={checkForEmailInLink(meta.link)}
                 target="_blank"
                 rel="noreferrer">
-                {title}
+                {meta.title}
             </a>
     }
 

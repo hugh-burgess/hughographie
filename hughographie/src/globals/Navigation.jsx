@@ -26,6 +26,12 @@ const Navigation = ({ blok, footerItems, isMobile }) => {
         };
     }, [isOpen]);
 
+    useEffect(() => {
+        if (!isMobile && isOpen) {
+            setIsOpen(false);
+        }
+    }, [isMobile, isOpen]);
+
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };

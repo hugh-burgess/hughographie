@@ -45,34 +45,34 @@ export default function P4Contact({ blok }) {
 
   return (
     <div className="page contact-page">
-      {blok.headline && <h1>{blok.headline}</h1>}
+      <form onSubmit={handleSubmit} className="contact-form">
+        <div className="form-row">
+          <div className="form-field">
+            <label htmlFor="sender">Sender</label>
+            <input
+              id="sender"
+              name="sender"
+              type="email"
+              value={form.sender}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="sender">Sender</label>
-          <input
-            id="sender"
-            name="sender"
-            type="email"
-            value={form.sender}
-            onChange={handleChange}
-            required
-          />
+          <div className="form-field">
+            <label htmlFor="subject">Subject</label>
+            <input
+              id="subject"
+              name="subject"
+              type="text"
+              value={form.subject}
+              onChange={handleChange}
+              required
+            />
+          </div>
         </div>
 
-        <div>
-          <label htmlFor="subject">Subject</label>
-          <input
-            id="subject"
-            name="subject"
-            type="text"
-            value={form.subject}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div>
+        <div className="form-field">
           <label htmlFor="message">Message</label>
           <textarea
             id="message"
@@ -84,8 +84,8 @@ export default function P4Contact({ blok }) {
           />
         </div>
 
-        <button type="submit">
-          Send
+        <button type="submit" className="form-submit">
+          {blok.buttonLabel}
         </button>
 
         {status && <p>{status}</p>}
