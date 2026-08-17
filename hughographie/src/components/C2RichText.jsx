@@ -10,7 +10,7 @@ const C2RichText = ({ content, className }) => {
             switch (item.type) {
                 case 'paragraph':
                     if (!item.content) {
-                        return
+                        return undefined
                     }
                     return (
                         <p key={key}>
