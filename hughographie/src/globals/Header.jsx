@@ -1,3 +1,4 @@
+import { ReactComponent as Logo } from "../icons/logo.svg";
 import { Link, NavLink } from 'react-router-dom';
 import useDarkMode from '../hooks/useDarkMode';
 import { CiSun } from "react-icons/ci";
@@ -6,7 +7,7 @@ import Navigation from './Navigation';
 
 export default function Header({ blok, isMobile, footerItems }) {
     const { toggleDarkMode, isDarkMode } = useDarkMode()
-    const themeToIcon = !isDarkMode ?  <CiSun /> : <IoMoonOutline />
+    const themeToIcon = !isDarkMode ? <CiSun /> : <IoMoonOutline />
 
     if (!blok || Object.keys(blok).length === 0) {
         return <header>No header data</header>;
@@ -14,7 +15,7 @@ export default function Header({ blok, isMobile, footerItems }) {
 
     return (
         <header>
-            <Link to="/" className="logo">{blok.title || 'Logo'}</Link>
+            <Link to="/" className="logo">{isMobile ? <Logo /> : blok.title}</Link>
             <ul className='desktop-nav'>
                 <li className="desktop-darkmode-toggle" onClick={() => toggleDarkMode()}>{themeToIcon ?? <CiSun />}</li>
                 {blok.nav?.map((item) => (
