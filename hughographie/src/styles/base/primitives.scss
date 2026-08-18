@@ -5,7 +5,7 @@ html {
     overflow: hidden;
   }
 
-  transition: all 0.5s ease-in-out;
+  transition: var(--transition-ease-in-out-half);
 }
 
 .root {
@@ -30,7 +30,7 @@ html {
 body {
   height: 100%;
   margin: 0;
-  transition: all 0.5s ease-in-out;
+  transition: var(--transition-ease-in-out-half);
 }
 
 header {
@@ -40,7 +40,7 @@ header {
   display: flex;
   align-items: stretch;
   margin: var(--mobile-container-width-x) var(--mobile-container-width-x) var(--mobile-container-width-x);
-  transition: all 0.5s ease-in-out;
+  transition: var(--transition-ease-in-out-half);
 
   @include tablet {
     position: relative;
@@ -105,7 +105,7 @@ main {
   max-width: var(--desktop-container-max-width);
   margin: 0 auto;
   width: 100%;
-  transition: all 0.5s ease-in-out;
+  transition: var(--transition-ease-in-out-half);
 }
 
 footer {
@@ -115,7 +115,7 @@ footer {
   align-items: center;
   flex-direction: column;
   margin: var(--mobile-container-width-x);
-  transition: all 0.5s ease-in-out;
+  transition: var(--transition-ease-in-out-half);
 
   @include tablet {
     flex-direction: row;

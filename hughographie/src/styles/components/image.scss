@@ -15,7 +15,7 @@
     height: 100%;
     width: auto;
     filter: brightness(1);
-    transition: filter 0.3s ease-in-out;
+    transition: var(--transition-ease-in-out-half);
 
     img {
         position: relative;
@@ -83,7 +83,7 @@
         top: 50%;
         left: 50%;
         transform: translateY(-50%) translateX(-50%);
-        transition: all 0.3s ease-in-out;
+        transition: var(--transition-ease-in-out-half);
         opacity: 0;
         text-transform: none;
     }
@@ -110,7 +110,7 @@
         height: 100%;
         opacity: 1;
         display: block;
-        transition: all 0.4s ease-in-out 0.2s;
+        transition: var(--transition-ease-in-out-half-fast-delay);
 
         &.loaded {
             opacity: 0;

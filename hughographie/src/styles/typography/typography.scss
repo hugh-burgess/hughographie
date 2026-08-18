@@ -59,7 +59,7 @@ span {
     font-family: var(--font-secondary);
     text-transform: uppercase;
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    transition: var(--transition-ease-third);
 
     &.back-link {
         height: 1em;
@@ -85,7 +85,7 @@ button {
     border-radius: var(--border-radius-default);
     cursor: pointer;
     border: none;
-    transition: all 0.3s ease-in-out;
+    transition: var(--transition-ease-in-out-half);
 }
 
 @include tablet {
@@ -127,7 +127,7 @@ button {
         left: 0;
         content: '';
         width: 0;
-        transition: width 0.2s ease-in-out;
+        transition: var(--transition-ease-in-out-half);
         border-bottom: 1.5px solid var(--black);
     }
 
@@ -160,5 +160,5 @@ h3,
 span,
 p,
 a {
-    transition: all 0.5s ease-in-out;
+    transition: var(--transition-ease-in-out-half);
 }

@@ -22,7 +22,7 @@
             .arrow {
                 rotate: 180deg;
                 font-size: var(--font-size-caption);
-                transition: all 0.5s ease-in-out;
+                transition: var(--transition-ease-in-out-half);
             }
 
 

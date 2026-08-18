@@ -9,7 +9,7 @@
   border: none;
   z-index: 900;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: var(--transition-ease-in-out-half);
 
   &.visible {
     opacity: 1;

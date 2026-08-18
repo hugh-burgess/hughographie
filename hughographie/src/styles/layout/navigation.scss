@@ -24,7 +24,7 @@
             height: 3px;
             background-color: currentColor;
             border-radius: var(--border-radius-tiny);
-            transition: all 0.3s ease;
+            transition: var(--transition-ease-third);
         }
 
         &.open {
@@ -52,7 +52,7 @@
         justify-content: center;
 
         transform: translateX(100%);
-        transition: all 0.5s ease;
+        transition: var(--transition-ease-third);
         z-index: 1000;
 
         &.open {

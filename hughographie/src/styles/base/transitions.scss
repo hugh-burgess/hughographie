@@ -1,0 +1,13 @@
+:root {
+    --third-of-second: 0.3s;
+    --half-second: 0.5s;
+
+    --ease-third: var(--third-of-second) ease;
+    --ease-in-out-half: var(--half-second) ease-in-out;
+
+    --fast-delay: 0.2s;
+
+    --transition-ease-in-out-half: all var(--ease-in-out-half);
+    --transition-ease-in-out-half-fast-delay: all var(--ease-in-out-half) var(--fast-delay);
+    --transition-ease-third: all var(--ease-third);
+}
