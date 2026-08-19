@@ -9,7 +9,13 @@
   src: local('Asap'), url(/public/fonts/Asap.ttf) format('truetype');
   font-weight: 400;
 }
+
 @font-face {
   font-family: 'Helvetica Light';
   src: local('Helvetica Light'), url(/public/fonts/helvetica-light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'PermanentMarker Regular';
+  src: local('PermanentMarker Regular'), url(/public/fonts/PermanentMarker-Regular.ttf) format('truetype');
 }
