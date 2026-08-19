@@ -81,6 +81,7 @@ header {
     display: none;
 
     @include tablet {
+      position: relative;
       display: flex;
       gap: var(--spacing-m);
       margin: 0;
@@ -99,8 +100,22 @@ header {
       list-style: none;
       display: inline;
 
-      .active {
-        text-decoration: underline;
+    }
+
+    .track {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: var(--track-width, 0px);
+      height: 1px;
+      background: currentColor;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(var(--track-offset, 0px));
+      transition: var(--transition-ease-in-out-third);
+
+      &.visible {
+        opacity: 1;
       }
     }
   }
