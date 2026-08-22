@@ -67,12 +67,11 @@ header {
 
     width: fit-content;
     font-family: var(--font-tertiary);
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-m);
   }
 
   a {
     font-size: var(--font-size-s);
-    text-transform: none;
     color: var(--black);
     text-align: center;
   }
@@ -130,15 +129,9 @@ main {
 
 footer {
   max-width: var(--desktop-container-max-width);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
   margin: var(--mobile-container-width-x);
-  transition: var(--transition-ease-in-out-half);
 
   @include tablet {
-    flex-direction: row;
     margin: 0 var(--desktop-container-width-x) var(--desktop-container-width-x);
   }
 
@@ -147,26 +140,35 @@ footer {
     width: 100%;
   }
 
-  .meta-links {
-    display: flex;
-    gap: var(--spacing-m);
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: var(--spacing-m);
+  nav {
+    width: 100%;
 
-    @include tablet {
-      flex-direction: row;
-      align-items: auto;
-      margin-bottom: 0;
+    ul {
+      display: flex;
+      gap: var(--spacing-m);
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      li {
+        list-style: none;
+      }
+
+      @include tablet {
+        flex-direction: row;
+        align-items: auto;
+        margin-bottom: 0;
+      }
     }
-  }
 
-  a {
-    font-size: var(--font-size-xs);
-    text-decoration: none;
+    a {
+      font-size: var(--font-size-xs);
 
-    &.active {
-      text-decoration: underline;
+      &.active {
+        text-decoration: underline;
+      }
     }
   }
 }

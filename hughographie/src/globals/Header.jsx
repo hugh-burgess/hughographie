@@ -1,11 +1,12 @@
 import { useLayoutEffect, useRef } from 'react';
 import { ReactComponent as Logo } from "../icons/logo.svg";
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import useDarkMode from '../hooks/useDarkMode';
 import { CiSun } from "react-icons/ci";
 import { IoMoonOutline } from "react-icons/io5";
 import Navigation from './Navigation';
+import { processNavLinks } from '../utils/processNavLinks';
 
 export default function Header({ blok, isMobile, footerItems }) {
     const { toggleDarkMode, isDarkMode } = useDarkMode()
@@ -50,13 +51,8 @@ export default function Header({ blok, isMobile, footerItems }) {
             <Link to="/" className="logo">{isMobile ? <Logo /> : blok.title}</Link>
             <ul className="desktop-nav" ref={navRef}>
                 <li className="desktop-darkmode-toggle" onClick={() => toggleDarkMode()}>{themeToIcon ?? <CiSun />}</li>
-                {blok.nav?.map((item) => (
-                    item.title && (<li key={item._uid}>
-                        <NavLink to={item.link?.cached_url || '#'}
-                            className={({ isActive }) => isActive ? "active" : ""}>
-                            {item.title}</NavLink>
-                    </li>)))}
-                    <div className="track"></div>
+                {blok.nav?.map((item, index) => (processNavLinks(item, index, null, false)))}
+                <div className="track"></div>
             </ul>
             <Navigation blok={blok} footerItems={footerItems} isMobile={isMobile} />
         </header>

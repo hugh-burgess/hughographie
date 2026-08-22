@@ -1,5 +1,4 @@
-import { NavLink } from 'react-router-dom';
-import { processMetaLinks } from '../utils/processMetaLinks';
+import { processNavLinks } from '../utils/processNavLinks';
 
 export default function Footer({ blok, isMobile }) {
 
@@ -7,18 +6,18 @@ export default function Footer({ blok, isMobile }) {
         return <footer><p>Footer (No data)</p></footer>;
     }
 
+    const footerNavItems = [
+        ...(blok.metaLinks?.length > 0 ? blok.metaLinks : []),
+        ...(blok.nav?.length > 0 ? blok.nav : [])
+    ]
+
     return (
         <footer>
-            <div className='meta-links'>
-                {blok.metaLinks && blok.metaLinks.map((meta, index) => processMetaLinks(meta, index, isMobile, false))}
-            </div>
-            <div>{blok.nav?.map((navItem, index) =>
-                <NavLink
-                    className={({ isActive }) => isActive ? "active" : ""}
-                    key={index} to={navItem.link?.cached_url || '#'}>
-                    {navItem.title}
-                </NavLink>
-            )}</div>
+            <nav>
+                <ul>
+                    {footerNavItems?.map((item, index) => processNavLinks(item, index, null, false))}
+                </ul>
+            </nav>
         </footer>
     );
 }
