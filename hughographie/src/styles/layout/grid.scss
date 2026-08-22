@@ -71,6 +71,28 @@
                 }
             }
         }
+
+        &.image-third {
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .image {
+                grid-column: 1;
+            }
+
+            .text {
+                grid-column: 2 / span 2;
+            }
+
+            &.reverse {
+                .image {
+                    grid-column: 3;
+                }
+
+                .text {
+                    grid-column: 1 / span 2;
+                }
+            }
+        }
     }
 
     @include desktop {
