@@ -16,6 +16,6 @@
 }
 
 @font-face {
-  font-family: 'PermanentMarker Regular';
-  src: local('PermanentMarker Regular'), url(/public/fonts/PermanentMarker-Regular.ttf) format('truetype');
+  font-family: 'ComforterBrush Regular';
+  src: local('ComforterBrush Regular'), url(/public/fonts/ComforterBrush-Regular.ttf) format('truetype');
 }
